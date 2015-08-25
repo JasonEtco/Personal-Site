@@ -1,0 +1,32 @@
+# Site settings
+title: JasonEtcovitch
+email: jasonetco@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Jason Etcovitch.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://jasonetcovitch.com" # the base hostname & protocol for your site
+# twitter_username: jekyllrb
+github_username:  jasonetco
+
+# Build settings
+markdown: kramdown
+
+exclude: [
+	.gitignore,
+	_js/,
+	Gemfile,
+	Gruntfile.js,
+	Gemfile.lock,
+	node_modules/,
+	package.json,
+	README.md,
+	LICENSE
+]
+
+paginate: 8
+
+sass:
+  style: :compressed
+
+gems:
+ - jekyll-sitemap
