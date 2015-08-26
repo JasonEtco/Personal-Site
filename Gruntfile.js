@@ -17,9 +17,9 @@ module.exports = function(grunt) {
         express: {
             all: {
                 options: {
-                    port: 4000,
+                    port: 8081,
                     hostname: '0.0.0.0',
-                    bases: ['_site'],
+                    bases: ['_site/'],
                     livereload: true
                 }
             }
@@ -37,6 +37,14 @@ module.exports = function(grunt) {
             dest: '_site/css/styles.css'
           }
         },
+        
+        uglify: {
+            main: {
+                files: {
+                    '_site/main.js': '_js/*.js'
+                }
+            }
+        },
 
         watch: {
             css: {
@@ -45,14 +53,14 @@ module.exports = function(grunt) {
                     '_sass/**/*.scss',
                     'css/*.scss'
                 ],
-                tasks: ['shell:jekyllBuild', 'autoprefixer']
+                tasks: ['shell:jekyllBuild', 'postcss']
             },
 
             js: {
                 files: [
                     '_js/*.js'
                 ],
-                tasks: ['uglify', 'shell:jekyllBuild']
+                tasks: ['uglify']
             },
 
             jekyll: {
@@ -64,34 +72,7 @@ module.exports = function(grunt) {
                     '*.html',
                     '*.md'
                 ],
-                tasks: ['shell:jekyllBuild']
-            },
-
-            options: {
-                livereload: true
-            }
-        },
-
-        uglify: {
-            main: {
-                files: {
-                    'main.js': '_js/*.js'
-                }
-            }
-        },
-
-        buildcontrol: {
-            options: {
-                dir: '_site',
-                commit: true,
-                push: true,
-                message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-            },
-            pages: {
-                options: {
-                    remote: 'https://github.com/DevShelfBlog/DevShelf.git',
-                    branch: 'gh-pages'
-                }
+                tasks: ['shell:jekyllBuild', 'uglify']
             }
         },
 
@@ -113,9 +94,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-express');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-build-control');
     grunt.loadNpmTasks('grunt-svgstore');
 
-    grunt.registerTask('default', ['uglify', 'svgstore', 'shell:jekyllBuild', 'postcss', 'express', 'watch']);
-    grunt.registerTask('deploy',  ['uglify', 'svgstore', 'shell:jekyllBuild', 'postcss', 'buildcontrol:pages']);
+    grunt.registerTask('default', ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'express', 'watch']);
+    grunt.registerTask('deploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss']);
 };

@@ -1,0 +1,24 @@
+.hundred-height {
+    height: 100%;
+}
+
+body > svg {display: none;}
+
+.section--home {
+    background-color: #f87000;
+    width: 100%;
+}
+
+.section--home__background {
+    height: 100%;
+    width: 100%;
+    background: none no-repeat center center;
+    background-size: cover;
+    
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    
+    &.animated {
+        opacity: 1;
+    }
+}
