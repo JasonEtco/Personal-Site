@@ -1,0 +1,169 @@
+/* FORM STYLES */
+.section--contact {
+    background: linear-gradient(darken($orange, 4%) 0%, $orange 100%) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+    }
+}
+
+.field__group:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  
+  .field {
+    width: 50%;
+    
+    &:nth-child(1) {
+      margin: 0 24px 0 0;
+    }
+  }
+}
+
+.field {
+  position: relative;
+
+  &::before, &::after {
+    content: '';
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    display: block;
+    position: absolute;
+    transform: scaleX(1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  &::after {
+    bottom: 1px;
+  }
+  
+  &.focused::before, &.focused::after {
+    transform: scaleX(0);
+  }
+}
+
+.field__input {
+  background-color: transparent;
+  display: block;
+  border: none;
+  outline: none;
+  padding: 1.4em 1em;
+  margin: 0 auto;
+  font-size: 1.2em;
+  transition: background-color 0.25s ease-in-out;
+  font-family: $body;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+
+.field__textarea {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 1.4em 1em;
+  margin: 0 auto;
+  height: 16em;
+  font-family: $body;
+  resize: none;
+  font-size: 1.2em;
+  transition: background-color 0.25s ease-in-out;
+  box-sizing: border-box;
+}
+
+.field__label {
+  color: white;
+  font-family: $title;
+  position: absolute;
+  top: 19px;
+  left: 18px;
+  font-size: 0.8em;
+  transition: all 0.25s ease-in-out;
+}
+
+.field__submit--wrapper, .form__text {
+  display: inline-block;
+}
+
+.field__submit {
+  font-family: $title;
+  background-color: whitesmoke;
+  color: $orange;
+  padding: 1em;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 40px;
+  font-size: 1em;
+  box-sizing: border-box;
+  border: whitesmoke solid 3px;
+  outline: none;
+  transition: all 0.25s ease-in-out;
+}
+
+.field__submit:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.field__submit:active {
+  background-color: lightgray; }
+
+.field__input::-moz-selection, .field__textarea::-moz-selection {
+  background-color: $orange;
+  color: black;
+}
+
+.field__input::selection, .field__textarea::selection {
+  background-color: $orange;
+  color: black;
+}
+
+#form-messages {
+  color: white;
+  font-family: $title;
+  font-size: 0.8em;
+  padding: 1.4em;
+  text-align: center;
+}
+
+.form__text {
+  color: white;
+  font-family: $title;
+  padding: 1.4em 0;
+  margin: 0;
+}
+
+.form__text a {
+  padding: 0.8em;
+  background-color: whitesmoke;
+  color: $orange;
+  text-decoration: none;
+  margin-left: 8px;
+  box-sizing: border-box;
+  border: whitesmoke solid 3px;
+  transition: all 0.25s ease-in-out;
+}
+
+.form__text a:hover {
+  background-color: transparent;
+  color: whitesmoke;
+}
+
+/* On Focus */
+.field.focused input, .field.focused textarea {
+  background-color: whitesmoke;
+}
+
+.field__label.focused {
+  transform: translate(-18px, -40px);
+}

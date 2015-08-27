@@ -13,18 +13,16 @@ var start = function() {
 
     
         // Smooth Scrolling Anchors
-        $('nav a[href^="#"], .arrow--down a[href^="#"]').on('click',function (e) {
+        $('nav a[href^="#"]').on('click',function (e) {
             e.preventDefault();
     
             var target = this.hash;
             var $target = $(target);
     
-            $('.arrow--down i').removeClass('animating');
             $('html, body').stop().animate({
        
              'scrollTop': $target.offset().top
             }, 900, 'swing', function () {
-                $('.arrow--down i').addClass('animating');
             });
         });
 
@@ -63,6 +61,7 @@ var start = function() {
     var lastScrollTop = 0;
     var delta = 5;
     var navbarHeight = $('.site-header').outerHeight();
+    var windowHeight = $(window).height();
     
     $(window).scroll(function(event){
         didScroll = true;
@@ -92,9 +91,11 @@ var start = function() {
             if(st + $(window).height() < $(document).height()) {
                 $('.site-header').removeClass('is-hidden').addClass('is-visible');
             }
-        } if(st == 0) {
+        } if(st < (windowHeight*0.4)) {
             $('.site-header').addClass('top-nav');
-        }
+        } if($(window).scrollTop() + $(window).height() == $(document).height()) {
+           $('.site-header').removeClass('is-hidden').addClass('is-visible');
+       }
         
         lastScrollTop = st;
     }
