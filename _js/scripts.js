@@ -1,14 +1,5 @@
 var start = function() {
-    // Random home background
-
-        // // Determine random number
-        // var backNum = (Math.floor((Math.random() * 3) + 1));
-        
-        // $('#headerphoto_'+ backNum).ready(function() {
-        //     $('.section--home__background').css('background-image', 'url("/assets/img/headerphoto_'+ backNum +'.jpg")');
-        //     $('.section--home__background').fadeIn(1000);
-        // });
-        
+        // Random home background
         var images = ['/assets/img/headerphoto_1.jpg', '/assets/img/headerphoto_2.jpg', '/assets/img/headerphoto_3.jpg'];
         
         var url = images[Math.floor(Math.random() * images.length)];
@@ -21,8 +12,7 @@ var start = function() {
 
 
     
-    // Smooth Scrolling Anchors
-
+        // Smooth Scrolling Anchors
         $('nav a[href^="#"], .arrow--down a[href^="#"]').on('click',function (e) {
             e.preventDefault();
     
@@ -37,6 +27,7 @@ var start = function() {
                 $('.arrow--down i').addClass('animating');
             });
         });
+
 
     
     // Nav logo Appear after first section
@@ -65,4 +56,46 @@ var start = function() {
             $('.header-wrapper, .overlay').removeClass('js__header-wrapper--open');
         });
     });
+    
+    
+    // Hide Header on on scroll down
+    var didScroll;
+    var lastScrollTop = 0;
+    var delta = 5;
+    var navbarHeight = $('.site-header').outerHeight();
+    
+    $(window).scroll(function(event){
+        didScroll = true;
+    });
+    
+    setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+        }
+    }, 100);
+    
+    function hasScrolled() {
+        var st = $(this).scrollTop();
+        
+        // Make sure they scroll more than delta
+        if(Math.abs(lastScrollTop - st) <= delta)
+            return;
+        
+        // If they scrolled down and are past the navbar, add class .nav-up.
+        // This is necessary so you never see what is "behind" the navbar.
+        if (st > lastScrollTop && st > navbarHeight){
+            // Scroll Down
+            $('.site-header').removeClass('is-visible top-nav').addClass('is-hidden');
+        } else {
+            // Scroll Up
+            if(st + $(window).height() < $(document).height()) {
+                $('.site-header').removeClass('is-hidden').addClass('is-visible');
+            }
+        } if(st == 0) {
+            $('.site-header').addClass('top-nav');
+        }
+        
+        lastScrollTop = st;
+    }
 };

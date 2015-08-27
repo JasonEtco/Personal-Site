@@ -1,5 +1,5 @@
 .section--home {
-    background-color: #f87000;
+    background-color: $orange;
     width: 100%;
     position: relative;
     display: flex;
@@ -14,7 +14,23 @@
 }
 
 .section--home__logo__svg {
-    width: 300px;
+    width: 220px;
+    position: relative;
+    bottom: 8px;
+    animation: fade-in-right 0.5s ease-in-out;
+    animation-fill-mode: both;
+    animation-delay: 0.25s;
+}
+
+.section--home__logo__slash {
+    width: 12px;
+    height: 105px;
+    margin: 0 30px 0 30px;
+    background-color: white;
+    display: block;
+    animation: slash-scale 0.5s ease-in-out;
+    animation-fill-mode: both;
+    transform-origin: left center;
 }
 
 .section--home__logo__title {
@@ -22,6 +38,9 @@
     font-weight: 400;
     text-transform: uppercase;
     color: white;
+    animation: fade-in-left 0.5s ease-in-out;
+    animation-fill-mode: both;
+    animation-delay: 0.25s;
 }
 
 .section--home__background {
@@ -32,11 +51,99 @@
     position: absolute;
     top: 0;
     left: 0;
-    
+
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    
+
     &.animated {
         opacity: 1;
+    }
+}
+
+@keyframes slash-scale {
+    0% {transform: skewX(-14deg) scale(1,0);}
+    100% {transform: skewX(-14deg) scale(1,1);}
+}
+
+@keyframes fade-in-left {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-right {
+    0% {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.section--about {
+    background-color: $grey;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.section--about__text-wrapper {
+    width: 30%;
+    min-width: 400px;
+}
+
+.section--about__title {
+    font-family: $title;
+    margin: 0;
+    color: white;
+    font-size: 2em;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+}
+
+.section--about__body {
+    font-family: $body;
+    color: white;
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+}
+
+.section--about__resume {
+    display: block;
+    float: right;
+    font: 16px $title;
+    color: white;
+    text-decoration: none;
+    padding: 1em 1.2em 1.2em 1.2em;
+    width: 100px;
+    background-color: $orange;
+    transition: background-color 0.25s ease-in-out;
+    
+    > svg {
+        height: 16px;
+        width: 16px;
+        fill: white;
+        margin: 0 0 0 6px;
+        position: relative;
+        top: 3px;
+        transform: translateX(0);
+        transition: transform 0.25s ease-in-out;
+        
+    }
+    
+    &:hover {
+        background-color: darken($orange, 10%);
+        
+        > svg {
+            transform: translateX(10px);
+        }
     }
 }

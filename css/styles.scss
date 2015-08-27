@@ -3,12 +3,20 @@
 @charset "utf-8";
 
 $mainFamily: 'Montserrat';
-$title: $mainFamily, Arial, Helvetica, sans-serif;
+$title: $mainFamily, Helvetica, Arial, sans-serif;
+
+$textFamily: 'Roboto';
+$body: $textFamily, Helvetica, Arial, sans-serif;
+
+$grey: #454545;
+$orange: #f87000;
 
 
 
 @import 'tools/normalize';
 
 @import 'base';
+
+@import 'nav';
 
 @import 'index';

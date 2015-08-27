@@ -17,10 +17,10 @@ module.exports = function(grunt) {
         express: {
             all: {
                 options: {
-                    port: 8081,
+                    port: 8080,
                     hostname: '0.0.0.0',
                     bases: ['_site/'],
-                    livereload: true
+                    // livereload: true
                 }
             }
         },
