@@ -1,12 +1,27 @@
-.hundred-height {
-    height: 100%;
-}
-
-body > svg {display: none;}
-
 .section--home {
     background-color: #f87000;
     width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.section--home__logo {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.section--home__logo__svg {
+    width: 300px;
+}
+
+.section--home__logo__title {
+    font-family: $title;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: white;
 }
 
 .section--home__background {
@@ -14,6 +29,9 @@ body > svg {display: none;}
     width: 100%;
     background: none no-repeat center center;
     background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
     
     opacity: 0;
     transition: opacity 1s ease-in-out;

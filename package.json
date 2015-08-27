@@ -1,7 +1,7 @@
 {
   "name": "jasonetcovitch.com",
   "version": "2.0.0",
-  "description": "",
+  "description": "Jason Etcovitch's personal site. Built in Jekyll.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
