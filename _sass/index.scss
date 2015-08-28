@@ -1,89 +1,54 @@
 .section--home {
     background-color: $orange;
     width: 100%;
+    height: 100%;
     position: relative;
     display: flex;
     justify-content: center;
     align-content: center;
-}
-
-.section--home__logo {
-    z-index: 2;
-    display: flex;
-    align-items: center;
-}
-
-.section--home__logo__svg {
-    width: 220px;
-    position: relative;
-    bottom: 8px;
-    animation: fade-in-right 0.5s ease-in-out;
-    animation-fill-mode: both;
-    animation-delay: 0.25s;
-}
-
-.section--home__logo__slash {
-    width: 12px;
-    height: 105px;
-    margin: 0 30px 0 30px;
-    background-color: white;
-    display: block;
-    animation: slash-scale 0.5s ease-in-out;
-    animation-fill-mode: both;
-    transform-origin: left center;
-}
-
-.section--home__logo__title {
-    font-family: $title;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: white;
-    animation: fade-in-left 0.5s ease-in-out;
-    animation-fill-mode: both;
-    animation-delay: 0.25s;
-}
-
-.section--home__background {
-    height: 100%;
-    width: 100%;
-    background: none no-repeat center center;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-
-    &.animated {
-        opacity: 1;
+    
+    &__logo {
+        z-index: 2;
+        display: flex;
+        align-items: center;
     }
-}
-
-@keyframes slash-scale {
-    0% {transform: skewX(-14deg) scale(1,0);}
-    100% {transform: skewX(-14deg) scale(1,1);}
-}
-
-@keyframes fade-in-left {
-    0% {
-        transform: translateX(-30px);
-        opacity: 0;
+    
+    &__logo__svg {
+        width: 220px;
+        position: relative;
+        bottom: 8px;
     }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
+    
+    &__logo__slash {
+        width: 12px;
+        height: 105px;
+        margin: 0 30px 0 30px;
+        background-color: white;
+        display: block;
+        transform-origin: left center;
     }
-}
-
-@keyframes fade-in-right {
-    0% {
-        transform: translateX(30px);
-        opacity: 0;
+    
+    &__logo__title {
+        font-family: $title;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: white;
     }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
+    
+    &__background {
+        height: 100%;
+        width: 100%;
+        background: none no-repeat center center;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    
+        animation-play-state: paused;
+    
+        &.animated {
+            animation-play-state: running;
+        }
     }
 }
 
@@ -93,57 +58,57 @@
     height: 100%;
     align-items: center;
     justify-content: center;
-}
 
-.section--about__text-wrapper {
-    width: 30%;
-    min-width: 400px;
-}
-
-.section--about__title {
-    font-family: $title;
-    margin: 0;
-    color: white;
-    font-size: 2em;
-    text-transform: uppercase;
-    -webkit-font-smoothing: antialiased;
-}
-
-.section--about__body {
-    font-family: $body;
-    color: white;
-    font-size: 1em;
-    -webkit-font-smoothing: antialiased;
-}
-
-.section--about__resume {
-    display: block;
-    float: right;
-    font: 16px $title;
-    color: white;
-    text-decoration: none;
-    padding: 1em 1.2em 1.2em 1.2em;
-    width: 100px;
-    background-color: $orange;
-    transition: background-color 0.25s ease-in-out;
-    
-    > svg {
-        height: 16px;
-        width: 16px;
-        fill: white;
-        margin: 0 0 0 6px;
-        position: relative;
-        top: 3px;
-        transform: translateX(0);
-        transition: transform 0.25s ease-in-out;
-        
+    &__text-wrapper {
+        width: 30%;
+        min-width: 400px;
     }
     
-    &:hover {
-        background-color: darken($orange, 10%);
+    &__title {
+        font-family: $title;
+        margin: 0;
+        color: white;
+        font-size: 2em;
+        text-transform: uppercase;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    &__body {
+        font-family: $body;
+        color: white;
+        font-size: 1em;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    &__resume {
+        display: block;
+        float: right;
+        font: 16px $title;
+        color: white;
+        text-decoration: none;
+        padding: 1em 1.2em 1.2em 1.2em;
+        width: 100px;
+        background-color: $orange;
+        transition: background-color 0.25s ease-in-out;
         
         > svg {
-            transform: translateX(10px);
+            height: 16px;
+            width: 16px;
+            fill: white;
+            margin: 0 0 0 6px;
+            position: relative;
+            top: 3px;
+            transform: translateX(0);
+            transition: transform 0.25s ease-in-out;
+            
+        }
+        
+        &:hover {
+            background-color: darken($orange, 10%);
+            
+            > svg {
+                transform: translateX(10px);
+            }
         }
     }
 }

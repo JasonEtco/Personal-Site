@@ -15,9 +15,11 @@ $orange: #f87000;
 
 @import 'tools/normalize';
 
-@import 'base';
-
-@import 'nav';
+@import 'general/base';
+@import 'general/nav';
+@import 'general/animations';
 
 @import 'index';
 @import 'form';
+
+@import 'portfolio';
