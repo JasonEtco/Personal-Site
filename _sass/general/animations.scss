@@ -23,6 +23,10 @@ $animTime: 0.5s;
         &--fade-in-right {
             animation-name: fade-in-right;
         }
+
+        &--fade-in-down {
+            animation-name: fade-in-down;
+        }
         
         &--fade-in-left--delayed {
             animation-name: fade-in-left--delayed;
@@ -39,6 +43,7 @@ $animTime: 0.5s;
     &.is-exiting {
         .scene-element {
             animation-direction: alternate-reverse;
+            animation-delay: 0s;
         }
     }
 }
@@ -75,6 +80,17 @@ $animTime: 0.5s;
     }
     100% {
         transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-down {
+    0% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
         opacity: 1;
     }
 }

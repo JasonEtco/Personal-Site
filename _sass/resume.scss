@@ -2,11 +2,84 @@
 	background-color: $orange;
 	width: 100%;
 	height: 100%;
+	padding-top: 100px;
 }
 
 .technical-skills-wrapper {
 	display: flex;
 	align-items: flex-start;
 	align-content: center;
-	justify-content: center;
+	justify-content: space-between;
+	width: 70%;
+	margin: 0 auto 100px auto;
 }
+
+.technical-skills__list {
+	list-style-type: none;
+	padding: 1em 0 0 1em;
+	margin: 0;
+	&-wrapper {
+		@for $i from 1 to 6 {
+		  &:nth-child(#{$i}) { animation-delay: $i * 0.25s; }
+		}
+	}
+	&-title {
+		font-family: $title;
+		color: white;
+		text-transform: uppercase;
+		margin: 0;
+		font-size: 20px;
+	}
+	li {
+		font-family: $body;
+		color: darken(white, 4%);
+		font-size: 14px;
+	}
+}
+
+
+.experience-wrapper {
+	display: flex;
+	align-content: center;
+	width: 100%;
+	&--work {
+		background-color: $grey;
+		width: 50%;
+		padding: 40px;
+		text-align: right;
+	}
+
+	&--education {
+		background-color: lighten($grey, 10%);
+		width: 50%;
+		padding: 40px;
+	}
+}
+
+.experience {
+	&__title {
+		font-family: $title;
+		color: white;
+		text-transform: uppercase;
+		margin: 0;
+		font-size: 20px;
+	}
+
+	&__list {
+		list-style-type: none;
+		&-item {
+			font-family: $body;
+			color: darken(white, 4%);
+			font-size: 16px;
+			margin: 16px 0;
+			&--sub {
+				font-family: $body;
+				font-style: italic;
+				color: darken(white, 12%);
+				font-size: 14px;
+				margin: 0;
+			}
+		}
+	}
+}
+
