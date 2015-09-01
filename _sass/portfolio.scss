@@ -1,5 +1,125 @@
-.portfolio {
-    background-color: $orange;
-    width: 100%;
-    height: 100%;
+.portfolio-wrapper {
+	padding-top:164px;
+}
+
+#filters {
+	z-index:97;
+	width:100%;
+	overflow:auto;
+	position:fixed;
+	top:100px;
+}
+
+.filters__dropdown-wrapper {
+	display:none;
+	z-index:97;
+	position:relative;
+	top:48px;
+	height:50px;
+	width:100%;
+	background-color:$orange;
+	padding:1.4em 0;
+}
+
+#filters--dropdown {	
+	display:block;
+	// @include prefix(appearance, none, moz webkit);
+	background-color:white;
+	width:80%;
+	max-width:300px;
+	padding:0.8em;
+	border-radius:none;
+	font-size:1em;
+	margin:0 auto;
+	text-indent:10px;
+
+	&::before {
+		content:'\f078';
+		font-family: FontAwesome;
+		color:black;
+		font-size:200px;
+		display:block;
+	}
+}
+
+.button {
+	width:calc(100% / 7);
+	border-bottom:solid 4px $orange;
+	border-top:solid 2px lighten($grey, 10%);
+	text-align: center;
+	float:left;
+	background-color: $grey;
+	cursor:pointer;
+	transition:background-color .25s ease-in-out;
+
+	&::before {
+		content: '';
+		position:absolute;
+		width:2px;
+		height:3.65em;
+		background-color:lighten($grey, 10%);
+		display:block;
+	}
+
+	&:first-of-type::before {
+		display:none;
+	}
+
+	&:hover {
+		background-color:lighten($grey, 10%);
+	}
+}
+
+.button h5 {
+	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+	font-size:0.8em;
+	text-transform: uppercase;
+	color:white;
+	font-weight: normal;
+}
+
+
+/* Project Icons */
+.project {
+	background-size:cover;
+	background-position:center center;
+	background-repeat: no-repeat;
+	width:20%;
+	float:left;
+}
+
+.project__link {
+	text-decoration: none;
+
+	&::before {
+		content: attr(data-title);
+		display: block;
+		top:0;
+		left:0;
+		width:100%;
+		height:56%;
+		color:white;
+		font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+		text-align: center;
+		padding-top:35%;
+
+		background-color:lightgray;
+		background-color:rgba(5, 5, 5, 0.5);
+		opacity: 0;
+		transition: opacity 0.2s ease-in-out;
+	}
+
+	&:hover::before {
+		opacity: 1;
+	}
+}
+
+
+// Super awesome @each loop to set background-image for each tile
+$list: munc nbc motion e3 bird gd2015 manmachine airport eno data typebox folds mesa14 vernissage;
+
+@each $project in $list {
+	##{$project} {
+		background-image:url('/assets/img/portfolio/#{$project}.png');
+	}
 }
