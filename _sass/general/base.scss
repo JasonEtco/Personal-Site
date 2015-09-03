@@ -2,4 +2,9 @@ html, body, .content-wrapper {
     height: 100%;
 }
 
+body {
+	background-color: $orange;
+	// overflow-y: scroll;
+}
+
 body > svg {display: none;}

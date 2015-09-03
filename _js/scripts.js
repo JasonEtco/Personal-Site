@@ -106,7 +106,7 @@ var start = function() {
     }
 
     // Initialize Isotope
-    var $container = $('.content-wrapper');
+    var $container = $('.portfolio-wrapper');
     // init
     $container.isotope({
         // options
