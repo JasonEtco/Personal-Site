@@ -11,63 +11,32 @@ title: Portfolio
   <body>
     
     {% include svg-defs.html %}
+    <svg class="cilp-svg" style="position:absolute;">
+      <defs>
+        <clipPath id="clip-polygon" clipPathUnits="objectBoundingBox">
+          <polygon points="0 1, 0.3 0, 1 0, 0.7 1"></polygon>
+        </clipPath>
+      </defs>
+    </svg>
 
     <div class="content-wrapper" id="main">
       
       {% include nav.html %}
       
-      <!--
+      <ul class="post-list">
+        {% for post in site.posts %}
 
-        FILTERS
+            <li class="post__list-item scene-element scene-element--fade-in-down">
 
-      -->
+              <a class="post__list-item__link" href="{{ post.url | prepend: site.baseurl }}" style="background-image: url(/assets/img/portfolio/{{ post.shortname }}.png)">
 
-      <div id="filters" class="button-group">
-        <div class="button" data-filter="*"><h5>All</h5></div>
-        <div class="button" data-filter=".branding"><h5>Branding</h5></div>
-        <div class="button" data-filter=".web"><h5>Web Design</h5></div>
-        <div class="button" data-filter=".animation"><h5>Animation</h5></div>
-        <div class="button" data-filter=".package"><h5>Packaging</h5></div>
-        <div class="button" data-filter=".publication"><h5>Publication</h5></div>
-        <div class="button" data-filter=".print"><h5>Print Media</h5></div>
-      </div>
+                <h2 class="post__list-item__title">{{ post.title }}</h2>
 
-      <div class="filters__dropdown-wrapper">
-        <select id="filters--dropdown">
-          <option value="*">All</option>
-          <option value=".branding">Branding</option>
-          <option value=".web">Web Design</option>
-          <option value=".animation">Animation</option>
-          <option value=".package">Packaging</option>
-          <option value=".publication">Publication</option>
-          <option value=".print">Print Media</option>
-        </select>
-      </div>
+              </a>
+            </li>
 
-
-      <!--
-
-        PORTFOLIO TILES
-
-      -->
-
-        <div class="portfolio-wrapper">
-          <div class="project branding web print publication" id="munc"><a class="project__link  animsition-link" href="projects/munc.html" data-title="MUNC Branding"></a></div>
-          <div class="project branding" id="nbc"><a class="project__link  animsition-link" href="projects/nbc.html" data-title="NBC Branding"></a></div>
-          <div class="project branding" id="motion"><a class="project__link  animsition-link" href="projects/motion.html" data-title="Motion Logo"></a></div>
-          <div class="project web branding" id="e3"><a class="project__link  animsition-link" href="projects/e3.html" data-title="E3 Website"></a></div>
-          <div class="project web branding publication" id="mesa14"><a class="project__link  animsition-link" href="projects/mesa14.html" data-title="Mesa 14 Branding"></a></div>
-          <div class="project branding" id="bird"><a class="project__link  animsition-link" href="projects/bird.html" data-title="Bird Logotypes"></a></div>
-          <div class="project animation" id="gd2015"><a class="project__link  animsition-link" href="projects/gd2015.html" data-title="Graphic Design Animation"></a></div>
-          <div class="project animation" id="manmachine"><a class="project__link  animsition-link" href="projects/manmachine.html" data-title="Man and the Machine"></a></div>
-          <div class="project animation" id="airport"><a class="project__link  animsition-link" href="projects/airport.html" data-title="Apple Airport Extreme"></a></div>
-          <div class="project print" id="folds"><a class="project__link  animsition-link" href="projects/folds.html" data-title="Folds on the Fly"></a></div>
-          <div class="project print" id="eno"><a class="project__link  animsition-link" href="projects/eno.html" data-title="Eno Music Poster"></a></div>
-          <div class="project print publication" id="data"><a class="project__link  animsition-link" href="projects/data.html" data-title="DATA Infographics"></a></div>
-          <div class="project print package" id="typebox"><a class="project__link  animsition-link" href="projects/typebox.html" data-title="TypeFoundry Box"></a></div>
-          <div class="project print" id="vernissage"><a class="project__link  animsition-link" href="projects/vernissage.html" data-title="GD 2015 Vernissage"></a></div>
-        </div>
-      </div>
+        {% endfor %}
+      </ul>
       
     </div>
     

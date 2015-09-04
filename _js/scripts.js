@@ -104,23 +104,4 @@ var start = function() {
         
         lastScrollTop = st;
     }
-
-    // Initialize Isotope
-    var $container = $('.portfolio-wrapper');
-    // init
-    $container.isotope({
-        // options
-        itemSelector: '.project',
-        layoutMode: 'fitRows'
-    });
-
-    $(document).ready(function() {
-        $container.delay(2000).isotope({ filter: '*' });
-    });
-
-    // filter items on button click
-    $('#filters, #filters--dropdown').on( 'click', '.button', function() {
-        var filterValue = $(this).attr('data-filter');
-    $container.isotope({ filter: filterValue });
-    });
 };

@@ -23,8 +23,6 @@ exclude: [
 	LICENSE
 ]
 
-paginate: 8
-
 sass:
   style: :compressed
 
