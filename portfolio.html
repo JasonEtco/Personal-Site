@@ -9,38 +9,44 @@ title: Portfolio
   {% include head.html %}
 
   <body>
-    
-    {% include svg-defs.html %}
-    <svg class="cilp-svg" style="position:absolute;">
-      <defs>
-        <clipPath id="clip-polygon" clipPathUnits="objectBoundingBox">
-          <polygon points="0 1, 0.3 0, 1 0, 0.7 1"></polygon>
-        </clipPath>
-      </defs>
-    </svg>
+	
+	{% include svg-defs.html %}
 
-    <div class="content-wrapper" id="main">
-      
-      {% include nav.html %}
-      
-      <ul class="post-list">
-        {% for post in site.posts %}
+	<div class="content-wrapper" id="main">
+	  
+	  {% include nav.html %}
+	  
+	  
+		<div class="featured__slider scene-element scene-element--fade-in">
+		  {% for post in site.posts limit:4 %}
 
-            <li class="post__list-item scene-element scene-element--fade-in-down">
+		  <div class="featured__slide">
+			<h2 class="featured__slide__title">{{ post.title }}</h2>
+			<a href="{{ post.url | prepend: site.baseurl }}" class="featured__slide__link">See More</a>
+			<div class="featured__slide__background" style="background-image: url(/assets/img/portfolio/{{ post.shortname }}.png)"></div>
+		  </div>
 
-              <a class="post__list-item__link" href="{{ post.url | prepend: site.baseurl }}" style="background-image: url(/assets/img/portfolio/{{ post.shortname }}.png)">
+		  {% endfor %}
+		</div>
 
-                <h2 class="post__list-item__title">{{ post.title }}</h2>
+		<div class="post-list">
+		{% for post in site.posts %}
 
-              </a>
-            </li>
+				<a class="post-list__item scene-element scene-element--fade-in" href="{{ post.url | prepend: site.baseurl }}" style="background-image: url(/assets/img/portfolio/{{ post.shortname }}.png)">
 
-        {% endfor %}
-      </ul>
-      
-    </div>
-    
-    {% include scripts.html %}
+					<h2 class="post__list-item__title">{{ post.title }}</h2>
+
+				</a>
+
+		{% endfor %}
+		</div>
+
+		<div class="next"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron18"></use></svg></div>
+		<div class="prev"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron20"></use></svg></div>
+	  
+	</div>
+	
+	{% include scripts.html %}
   </body>
 
 </html>
