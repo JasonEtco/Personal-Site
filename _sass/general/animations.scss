@@ -43,7 +43,7 @@ $animTime: 0.5s;
     &.is-exiting {
         .scene-element {
             animation-direction: alternate-reverse;
-            animation-delay: 0s;
+            animation-delay: 0s !important;
         }
     }
 }

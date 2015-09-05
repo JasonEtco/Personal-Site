@@ -1,62 +1,33 @@
 var start = function() {
-        // Random home background
-        var images = ['/assets/img/headerphoto_1.jpg', '/assets/img/headerphoto_2.jpg', '/assets/img/headerphoto_3.jpg'];
-        
-        var url = images[Math.floor(Math.random() * images.length)];
-        var img = new Image();
-        img.onload = function(){
-            $('.section--home__background').css('background-image', 'url(' + url + ')');
-            $('.section--home__background').addClass('animated');
-        };
-        img.src = url;
+    // Random home background
+    var images = ['/assets/img/headerphoto_1.jpg', '/assets/img/headerphoto_2.jpg', '/assets/img/headerphoto_3.jpg'];
+    
+    var url = images[Math.floor(Math.random() * images.length)];
+    var img = new Image();
+    img.onload = function(){
+        $('.section--home__background').css('background-image', 'url(' + url + ')');
+        $('.section--home__background').addClass('animated');
+    };
+    img.src = url;
 
-        if(document.title === 'Jason Etcovitch') {
-            $('nav [data-anchor^="#"]').each(function() {
-                var anchor = $(this).attr("data-anchor");
-                $(this).attr("href", anchor);
-            });
-        }
-            
-        // Smooth Scrolling Anchors
-        $('nav a[href^="#"]').on('click',function (e) {
-            e.preventDefault();
-    
-            var target = this.hash;
-            var $target = $(target);
-    
-            $('html, body').stop().animate({
-       
-             'scrollTop': $target.offset().top
-            }, 900, 'swing', function () {
-            });
+    if(document.title === 'Jason Etcovitch') {
+        $('nav [data-anchor^="#"]').each(function() {
+            var anchor = $(this).attr("data-anchor");
+            $(this).attr("href", anchor);
         });
+    }
+        
+    // Smooth Scrolling Anchors
+    $('nav a[href^="#"]').on('click',function (e) {
+        e.preventDefault();
 
+        var target = this.hash;
+        var $target = $(target);
 
-    
-    // Nav logo Appear after first section
-    $(window).scroll(function() {
-        var height = $(window).height();
-        if ($(window).scrollTop() >= height / 2) {
-          $('.nav__logo, .arrow--up').addClass('animated');
-        } else {
-          $('.nav__logo, .arrow--up').removeClass('animated');
-        }
-    });
-    
-    
-    $('.arrow--up').click(function() {
-      $('html,body').animate({ scrollTop: 0 }, 'slow', function () {
-                          // swag out
-                        });
-    });
-    
-    
-    // Toggle mobile nav
-    $('.nav__mobile-button').on('click', function() {
-        $('.header-wrapper, .overlay').addClass('js__header-wrapper--open');
-    
-        $('.overlay, .nav__link').on('click', function() {
-            $('.header-wrapper, .overlay').removeClass('js__header-wrapper--open');
+        $('html, body').stop().animate({
+   
+         'scrollTop': $target.offset().top
+        }, 900, 'swing', function () {
         });
     });
     
@@ -96,7 +67,7 @@ var start = function() {
             if(st + $(window).height() < $(document).height()) {
                 $('.site-header').removeClass('is-hidden').addClass('is-visible');
             }
-        } if(st < (windowHeight*0.4)) {
+        } if(st < (windowHeight*0.3)) {
             $('.site-header').addClass('top-nav');
         } if($(window).scrollTop() + $(window).height() == $(document).height()) {
            $('.site-header').removeClass('is-hidden').addClass('is-visible');
