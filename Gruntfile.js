@@ -86,7 +86,25 @@ module.exports = function(grunt) {
                     '_includes/svg-defs.html': ['_svgs/*.svg'],
                 }
             }
-        }
+        },
+
+        ftp_push: {
+            your_target: {
+              options: {
+                authKey: "key1",
+                host: "jasonetcovitch.com",
+                dest: "/public_html/",
+                port: 21
+              },
+              files: [
+                {
+                  expand: true,
+                  cwd: '_site/',
+                  src: [ "**/*" ]
+                }
+              ]
+            }
+          }
     });
 
     grunt.loadNpmTasks('grunt-shell');
@@ -95,7 +113,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-express');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-svgstore');
+    grunt.loadNpmTasks('grunt-ftp-push');
 
     grunt.registerTask('default', ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'express', 'watch']);
-    grunt.registerTask('deploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss']);
+    grunt.registerTask('deploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'ftp_push']);
 };

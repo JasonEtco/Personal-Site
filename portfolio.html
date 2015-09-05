@@ -33,12 +33,12 @@ title: Portfolio
 			<div class="prev"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron20"></use></svg></div>
 		</div>
 
-		<div class="post-list">
+		<div class="post-list scene-element scene-element--fade-in">
 			{% for post in site.posts %}
 			
-			<a class="post-list__item scene-element scene-element--fade-in" href="{{ post.url | prepend: site.baseurl }}" style="animation-delay: {{ forloop.index | divided_by: 70.00 }}s; -webkit-animation-delay: {{ forloop.index | divided_by: 7.0 }}s">
+			<a class="post-list__item scene-element scene-element--fade-in" href="{{ post.url | prepend: site.baseurl }}" style="animation-delay: {{ forloop.index | divided_by: 7.00 }}s; -webkit-animation-delay: {{ forloop.index | divided_by: 7.00 }}s">
 
-				<h2 class="post__list-item__title">{{ post.title }}</h2>
+				<h2 class="post-list__item__title">{{ post.title }}</h2>
 				<div class="post-list__item__background" style="background-image: url(/assets/img/portfolio/{{ post.shortname }}/{{ post.shortname }}.png)"></div>
 
 			</a>
