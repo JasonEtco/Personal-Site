@@ -19,10 +19,12 @@ $orange: #f87000;
 @import 'general/nav';
 @import 'general/animations';
 
-@import 'index';
-@import 'form';
+@import 'index/index';
+@import 'index/form';
 
-@import 'portfolio';
-@import 'portfolio-slider';
+@import 'portfolio/portfolio';
+@import 'portfolio/portfolio-slider';
 
 @import 'resume';
+
+@import 'post';

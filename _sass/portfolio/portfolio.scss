@@ -1,4 +1,4 @@
-.post-list {
+.portfolio-list {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -62,14 +62,14 @@
 		}
 
 		&:hover {
-			> .post-list__item__background::before {
+			> .portfolio-list__item__background::before {
 				opacity: 0.5;
 			}
-			> .post-list__item__background::after {
+			> .portfolio-list__item__background::after {
 				transform: scale(1,1);
 			}
 
-			> .post-list__item__title {
+			> .portfolio-list__item__title {
 				opacity: 1;
 			}
 		}
