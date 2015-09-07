@@ -21,8 +21,29 @@
 			font-family: $title;
 			font-size: 16px;
 			font-weight: normal;
+			margin: 0;
 			opacity: 0;
 			transition: opacity 0.25s ease-in-out;
+		}
+
+		&__category {
+			color: white;
+			font-family: $title;
+			font-size: 12px;
+			font-weight: normal;
+			text-transform: uppercase;
+			opacity: 0;
+			margin: 0;
+			transition: opacity 0.25s ease-in-out;
+
+			&::before {
+				content: '';
+				height: 3px;
+				width: 60%;
+				background-color: $orange;
+				display: block;
+				margin: 6px auto;
+			}
 		}
 
 		&__background {
@@ -32,9 +53,8 @@
 			top: 0;
 			left: 0;
 			z-index: -1;
-			background-size: cover;
-			background-position: center center;
-			background-repeat: no-repeat;
+			
+			@include background;
 
 			&::before {
 				content: '';
@@ -69,7 +89,7 @@
 				transform: scale(1,1);
 			}
 
-			> .portfolio-list__item__title {
+			> .portfolio-list__item__title, > .portfolio-list__item__category {
 				opacity: 1;
 			}
 		}

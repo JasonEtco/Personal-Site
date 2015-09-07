@@ -9,11 +9,13 @@ $textFamily: 'Roboto';
 $body: $textFamily, Helvetica, Arial, sans-serif;
 
 $grey: #454545;
+$lightgrey: lighten($grey, 80%);
 $orange: #f87000;
 
 
 
 @import 'tools/normalize';
+@import 'tools/mixins';
 
 @import 'general/base';
 @import 'general/nav';

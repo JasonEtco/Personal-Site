@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  {% include head.html %}
+	{% include head.html %}
 
-  <body>
-    
-    {% include svg-defs.html %}
+	<body>
+		{% include svg-defs.html %}
 
-    <div class="content-wrapper" id="main">
-      
-      {% include nav.html %}
-      
-      <div class="post__content-wrapper">{{ content }}</div>
-      
-    </div>
-    
-    {% include scripts.html %}
-  </body>
+	    <div class="content-wrapper" id="main">
+		    <style>
+		    	h2 { background-color: #{{ page.maincolor }}; }
+		    </style>
+	      
+	    	{% include nav.html %}
+
+	    	<div class="post__intro scene-element scene-element--fade-in" style="background-image: url(/assets/img/portfolio/{{ page.shortname }}/{{ page.shortname }}_large.jpg)">
+
+	    		<div class="post__intro__inner">
+		    		<h1 class="post__intro__title scene-element scene-element--fade-in-left">{{ page.title }}</h1><br>
+		    		<span class="post__intro__category scene-element scene-element--fade-in-left">{{ page.category }}</span>
+	    		</div>
+
+	    		<div class="post__intro__controls">
+
+	    			{% if page.next %} 
+	    				<a href="{{ page.next.url }}" class="post__intro__next"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron18"></use></svg></a>
+	    			{% endif %}
+
+		    		{% if page.previous %} 
+			        	<a href="{{ page.previous.url }}" class="post__intro__prev"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron20"></use></svg></a>
+			        {% endif %}
+
+		        </div>
+	    	</div>
+	      
+	    	<div class="post__content-wrapper scene-element scene-element--fade-in">
+				{{ content }}
+	    	</div>
+	      
+		</div>
+	    
+		{% include scripts.html %}
+	</body>
 
 </html>

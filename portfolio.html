@@ -39,6 +39,7 @@ title: Portfolio
 			<a class="portfolio-list__item scene-element scene-element--fade-in" href="{{ post.url | prepend: site.baseurl }}" style="animation-delay: {{ forloop.index | divided_by: 7.00 }}s; -webkit-animation-delay: {{ forloop.index | divided_by: 7.00 }}s">
 
 				<h2 class="portfolio-list__item__title">{{ post.title }}</h2>
+				<h4 class="portfolio-list__item__category">{{ post.category }}</h4>
 				<div class="portfolio-list__item__background" style="background-image: url(/assets/img/portfolio/{{ post.shortname }}/{{ post.shortname }}.png)"></div>
 
 			</a>
