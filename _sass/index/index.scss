@@ -53,6 +53,10 @@
     }
 }
 
+.site-header--index .site-header__logo-link {
+    display:none;
+}
+
 .section--about {
     background-color: $grey;
     display: flex;

@@ -24,6 +24,7 @@
 			margin: 0;
 			opacity: 0;
 			transition: opacity 0.25s ease-in-out;
+			z-index: 2;
 		}
 
 		&__category {
@@ -35,6 +36,7 @@
 			opacity: 0;
 			margin: 0;
 			transition: opacity 0.25s ease-in-out;
+			z-index: 2;
 
 			&::before {
 				content: '';
@@ -52,7 +54,6 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			z-index: -1;
 			
 			@include background;
 

@@ -8,6 +8,12 @@
 
 	@include background;
 
+	&__inner {
+		max-width: 1280px;
+		margin: 0 auto;
+		width: 100%;
+	}
+
 	&__title {
 		background-color: $grey;
 		color: white;
@@ -16,6 +22,7 @@
 		margin: 0 0 0 50px;
 		font-size: 22px;
 		font-weight: normal;
+		display: inline-block;
 	}
 
 	&__category {
@@ -29,6 +36,8 @@
 		text-transform: uppercase;
 		display: inline-block;
 		animation-delay: 0.2s;
+		position: relative;
+		bottom: 3px;
 	}
 
 	&__prev, &__next {
@@ -57,12 +66,15 @@
 			box-sizing: border-box;
 			transform: translateX(-10px);
 			opacity: 0;
-			transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+			visibility: hidden;
+			transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
+			transition-delay: 0s;
 		}
 
 		&:hover::before {
 			transform: translateX(0);
 			opacity: 1;
+			visibility: visible;
 		}
 	}
 
@@ -78,6 +90,5 @@
 		position: absolute;
 		left: 0;
 		top: 0;
-		z-index: -1;
 	}
 }

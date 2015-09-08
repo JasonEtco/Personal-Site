@@ -1,21 +1,12 @@
 .post__content-wrapper {
-	padding-top: 70px;
+	padding-top: 30px;
 	width: 100%;
 	background-color: $lightgrey;
+	padding-bottom: 30px;
 
 	&__inner {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
 		max-width: 1280px;
 		margin: 0 auto;
-
-		h1 {
-			font-family: $title;
-			color: white;
-			display: none;
-		}
 
 		> p {
 			width: 100%;
@@ -36,15 +27,26 @@
 			}
 		}
 
+		hr {
+			width: 300px;
+			height: 3px;
+			float: left;
+			margin: 10px 0;
+			border: none;
+		}
+
 		> blockquote {
 			display: flex;
-			justify-content: center;
+			justify-content: flex-start;
 			align-items: flex-start;
 			margin: 0;
 			width: 100%;
 
 			> blockquote {
-				width: 50%;
+				width: 30%;
+				margin: 0;
+
+				&:nth-child(1) {margin-right: 1em;}
 			}
 
 			h2 {
@@ -62,6 +64,38 @@
 				font-family: $body;
 				color: $grey;
 				font-size: 14px;
+			}
+		}
+
+		video {
+			width: 100%;
+		}
+
+		.img-w-descrip {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			margin: 1em 0 0 0;
+			width: 100%;
+			&:nth-child(1) {margin: 0;}
+			&:nth-child(2n) {justify-content: flex-start}
+
+			p {
+				font-family: $body;
+				color: $grey;
+				font-size: 14px;
+				text-align: right;
+				max-width: 320px;
+				margin: 0 1em 0 0;
+			}
+
+			&:nth-child(2n) img {
+				order: -1;
+			}
+
+			&:nth-child(2n) p {
+				text-align: left;
+				margin: 0 0 0 1em;
 			}
 		}
 	}

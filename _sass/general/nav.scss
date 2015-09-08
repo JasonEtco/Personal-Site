@@ -31,29 +31,12 @@
         box-shadow: none;
         height: 100px;
     }
-
-    &__logo-link {
-        opacity: 1;
-        visibility: visible;
-        transition-delay: 0s;
-        transition: opacity 2s ease-in-out, visibility 2s ease-in-out;
-
-        &.site-header__logo--hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-    }
     
     &__logo {
         height: 55px;
         width: 120px;
     }
 }
-
-.site-header--index .site-header__logo {
-    display: none;
-}
-
 .nav {
     display: flex;
     align-items: center;
