@@ -1,6 +1,10 @@
 $(document).ready(function() {
     start();
-    form_start(); 
+    form_start();
+
+    if(document.title === 'Jason Etcovitch') {
+      $('.site-header__logo-link').remove();
+    }
 });
 
 
@@ -36,6 +40,9 @@ $(function(){
         // Inject the new content
         $container.html($newContent);
 
+        if(document.title === 'Jason Etcovitch') {
+          $('.site-header__logo-link').remove();
+        }
       }
     },
     

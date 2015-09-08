@@ -8,7 +8,7 @@
 
 	    <div class="content-wrapper" id="main">
 		    <style>
-		    	h2 { background-color: #{{ page.maincolor }}; }
+		    	.post__content-wrapper h2 { background-color: #{{ page.maincolor }}; }
 		    </style>
 	      
 	    	{% include nav.html %}
@@ -16,7 +16,7 @@
 	    	<div class="post__intro scene-element scene-element--fade-in" style="background-image: url(/assets/img/portfolio/{{ page.shortname }}/{{ page.shortname }}_large.jpg)">
 
 	    		<div class="post__intro__inner">
-		    		<h1 class="post__intro__title scene-element scene-element--fade-in-left">{{ page.title }}</h1><br>
+		    		<h1 class="post__intro__title scene-element scene-element--fade-in-left">{{ page.title }}</h1>
 		    		<span class="post__intro__category scene-element scene-element--fade-in-left">{{ page.category }}</span>
 	    		</div>
 
@@ -34,7 +34,27 @@
 	    	</div>
 	      
 	    	<div class="post__content-wrapper scene-element scene-element--fade-in">
-				{{ content }}
+				<div class="post__content-wrapper__inner">{{ content }}</div>
+	    	</div>
+			
+			<!-- <ul class="tag-list">
+		    	{% for tag in page.tags %}
+		    		<li>{{ tag }}</li>
+		    	{% endfor %}
+	    	</ul> -->
+
+	    	<div class="portfolio-list scene-element scene-element--fade-in">
+	    		{% for post in site.posts %}
+	    		
+	    		<a class="portfolio-list__item" href="{{ post.url | prepend: site.baseurl }}">
+
+	    			<h2 class="portfolio-list__item__title">{{ post.title }}</h2>
+	    			<h4 class="portfolio-list__item__category">{{ post.category }}</h4>
+	    			<div class="portfolio-list__item__background" style="background-image: url(/assets/img/portfolio/{{ post.shortname }}/{{ post.shortname }}.png)"></div>
+
+	    		</a>
+
+	    		{% endfor %}
 	    	</div>
 	      
 		</div>

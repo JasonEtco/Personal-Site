@@ -3,7 +3,8 @@ layout: post
 title: Man & the Machine
 category: Motion Graphic
 shortname: manmachine
-tags: school logo-design motion-graphics
+maincolor: 000000
+tags: [School Assignment, Logo Design, Motion Graphic]
 ---
 
 # Man & the Machine Animation
