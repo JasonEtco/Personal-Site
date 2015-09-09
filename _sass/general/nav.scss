@@ -10,7 +10,7 @@
     justify-content: flex-end;
     transform: translate3d(0, 0, 0);
     transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out, visibility 0.25s 0s ease-in-out, background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out, height 0.25s ease-in-out;
-    
+
     &.is-hidden {
         opacity: 0;
         transform: translate3d(0, -60px, 0);
@@ -36,7 +36,99 @@
         height: 55px;
         width: 120px;
     }
+
+    &__button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: $orange;
+        color: white;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        z-index: 999;
+        border: none;
+        display: none;
+        outline: none;
+
+        @include media-query($on-mobile) {
+            display: block;
+        }
+
+        span {
+            width: 20px;
+            height: 2px;
+            background-color: white;
+            display: block;
+            position: relative;
+            transition: background-color 0.25s ease-in-out;
+
+            &::after, &::before {
+                content: '';
+                width: 20px;
+                height: 2px;
+                position: absolute;
+                background-color: white;
+                display: block;
+                transition: transform 0.25s ease-in-out;
+            }
+
+            &::after {top: 7px;}
+            &::before {bottom: 7px;}
+        }
+
+        &.mobile-nav--toggled span {
+            background-color: transparent;        
+    
+            &::after {
+                transform: translateY(-7px) rotate(45deg);
+            }
+
+            &::before {
+                transform: translateY(7px)  rotate(-45deg);
+            }
+        }
+    }
+
+    @include media-query($on-mobile) {
+        height: 100% !important;
+        width: 200px;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: $grey !important;
+        justify-content: flex-start;
+        padding: 30px;
+        box-sizing: border-box;
+
+        transform: translateX(-200px) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        &.mobile-nav--toggled {
+            transform: translateX(0) !important;
+        }
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0;
+        z-index: 998;
+        visibility: hidden;
+        transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
+        transition-delay: 0s;
+
+        &.mobile-nav--toggled {
+            opacity: 0.4;
+            visibility: visible;
+        }
+    }
 }
+
 .nav {
     display: flex;
     align-items: center;
@@ -75,5 +167,15 @@
         &:hover::before, &:hover::after {
             transform: scale(1,1);
         }
+
+        @include media-query($on-mobile) {
+            margin: 20px 0;
+        }
+    }
+
+    @include media-query($on-mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
     }
 }

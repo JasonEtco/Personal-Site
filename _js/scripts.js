@@ -76,6 +76,23 @@ var start = function() {
         lastScrollTop = st;
     }
 
+    // Nav toggle for mobile
+    var navButton = $('.site-header__button');
+    var navOverlay = $('.site-header__overlay');
+    var navToggleStuff = $('.site-header, .site-header__overlay, .site-header__button');
+
+    navButton.click(function() {
+        navToggleStuff.toggleClass('mobile-nav--toggled');
+    });
+
+    navOverlay.click(function() {
+        navToggleStuff.removeClass('mobile-nav--toggled');
+    })
+
+    $('.site-header a').click(function() {
+        navToggleStuff.removeClass('mobile-nav--toggled');
+    })
+
 
 
 

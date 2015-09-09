@@ -69,6 +69,7 @@
 			visibility: hidden;
 			transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
 			transition-delay: 0s;
+			pointer-events: none;
 		}
 
 		&:hover::before {

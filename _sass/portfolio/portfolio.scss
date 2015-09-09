@@ -11,10 +11,23 @@
 		align-items: center;
 		flex-direction: column;
 		width: 20%;
-		height: 200px;
+		height: 300px;
 		text-decoration: none;
 		text-align: center;
 		position: relative;
+
+		@include media-query-ext($on-laptop, $on-tablet) {
+			height: 200px;
+		}
+
+		@include media-query-ext($on-tablet, $on-mobile) {
+			height: 160px;
+		}
+
+		@include media-query($on-mobile) {
+			height: 160px;
+			width: calc(100% / 3);
+		}
 
 		&__title {
 			color: white;
