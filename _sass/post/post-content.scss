@@ -5,21 +5,7 @@
 	padding-bottom: 30px;
 
 	&__inner {
-		max-width: 1280px;
 		width: 100%;
-		margin: 0 auto;
-
-		@include media-query-ext($on-laptop, $on-tablet) {
-			max-width: 80%;
-		}
-
-		@include media-query-ext($on-tablet, $on-mobile) {
-			max-width: 85%;
-		}
-
-		@include media-query($on-mobile) {
-			max-width: 90%;
-		}
 
 		> p {
 			width: 100%;
@@ -27,6 +13,7 @@
 			box-sizing: border-box;
 			text-align: center;
 			font-family: $body;
+			clear: both;
 
 			br {
 				content: '';
@@ -36,7 +23,8 @@
 
 			img {
 				max-width: 100%;
-				margin: 10px 0;
+				margin: 10px auto;
+				display: block;
 			}
 		}
 
@@ -46,18 +34,30 @@
 			float: left;
 			margin: 10px 0;
 			border: none;
+			clear: both;
 		}
 
 		> blockquote {
-			display: flex;
-			justify-content: flex-start;
-			align-items: flex-start;
-			margin: 0;
-			width: 100%;
+			margin: 0 auto;
+			width: 60%;
+			
+
+			@include media-query-ext($on-laptop, $on-tablet) {
+				width: 80%;
+			}
+
+			@include media-query-ext($on-tablet, $on-mobile) {
+				width: 85%;
+			}
+
+			@include media-query($on-mobile) {
+				width: 90%;
+			}
 
 			> blockquote {
-				width: 30%;
+				width: 35%;
 				margin: 0;
+				float: left;
 
 				&:nth-child(1) {margin-right: 1em;}
 			}
