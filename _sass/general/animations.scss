@@ -11,6 +11,10 @@ $animTime: 0.5s;
         &--slash-scale {
             animation-name: slash-scale;
         }
+
+        &--scale-in {
+            animation-name: scale-in;
+        }
         
         &--fade-in {
             animation-name: fade-in;
@@ -55,6 +59,11 @@ $animTime: 0.5s;
 @keyframes slash-scale {
     0% { transform: skewX(-14deg) scale(1,0); }
     100% { transform: skewX(-14deg) scale(1,1); }
+}
+
+@keyframes scale-in {
+    0% { transform: scale(0,1);opacity: 0; }
+    100% { transform: scale(1,1);opacity: 1; }
 }
 
 @keyframes fade-in {

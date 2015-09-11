@@ -17,6 +17,14 @@
         width: 220px;
         position: relative;
         bottom: 8px;
+
+        @include media-query-ext($on-tablet, $on-mobile) {
+            width: 180px;
+        }
+
+        @include media-query($on-mobile) {
+            width: 180px;
+        }
     }
     
     &__logo__slash {
@@ -27,6 +35,16 @@
         display: block;
         transform-origin: left center;
         backface-visibility: hidden;
+
+        @include media-query-ext($on-tablet, $on-mobile) {
+            height: 90px;
+            width: 10px;
+        }
+
+        @include media-query($on-mobile) {
+            height: 90px;
+            width: 10px;
+        }
     }
     
     &__logo__title {
@@ -34,6 +52,14 @@
         font-weight: 400;
         text-transform: uppercase;
         color: white;
+
+        @include media-query-ext($on-tablet, $on-mobile) {
+            font-size: 30px;
+        }
+
+        @include media-query($on-mobile) {
+            display: none;
+        }
     }
     
     &__background {
@@ -69,6 +95,11 @@
     &__text-wrapper {
         width: 30%;
         min-width: 400px;
+
+        @include media-query($on-mobile) {
+            width: 90%;
+            min-width: 0;
+        }
     }
     
     &__title {
@@ -116,6 +147,10 @@
             > svg {
                 transform: translateX(10px);
             }
+        }
+
+        @include media-query($on-mobile) {
+            padding: 0.8em 1em 1em 1em;
         }
     }
 }
