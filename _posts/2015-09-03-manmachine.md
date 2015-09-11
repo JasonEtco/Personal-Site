@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Man & the Machine
-category: Motion Graphic
+description: Motion Graphic
 shortname: manmachine
 maincolor: 111111
 tags: [School Assignment, Logo Design, Motion Graphic]

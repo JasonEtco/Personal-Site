@@ -18,7 +18,7 @@
 
 	    		<div class="post__intro__inner">
 		    		<h1 class="post__intro__title scene-element scene-element--fade-in-left">{{ page.title }}</h1><br>
-		    		<span class="post__intro__category scene-element scene-element--fade-in-left">{{ page.category }}</span>
+		    		<span class="post__intro__category scene-element scene-element--fade-in-left">{{ page.description }}</span>
 	    		</div>
 
 	    		<div class="post__intro__controls">
@@ -50,7 +50,7 @@
 	    		<a class="portfolio-list__item" href="{{ post.url | prepend: site.baseurl }}">
 
 	    			<h2 class="portfolio-list__item__title">{{ post.title }}</h2>
-	    			<h4 class="portfolio-list__item__category">{{ post.category }}</h4>
+	    			<h4 class="portfolio-list__item__category">{{ post.description }}</h4>
 	    			<div class="portfolio-list__item__background" style="background-image: url(/assets/img/portfolio/{{ post.shortname }}/{{ post.shortname }}.png)"></div>
 
 	    		</a>
