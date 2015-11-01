@@ -130,7 +130,7 @@ module.exports = function(grunt) {
                },
                pages: {
                    options: {
-                       remote: 'https://github.com/DevShelfBlog/DevShelf.git',
+                       remote: 'https://github.com/JasonEtco/jasonetcovitch.com.git',
                        branch: 'gh-pages'
                    }
                }
