@@ -28,7 +28,8 @@
     "time-grunt": "^1.1.0",
     "grunt-ftp-push": "~0.4.0",
     "grunt-contrib-imagemin": "~0.9.4",
-    "grunt-newer": "~1.1.1"
+    "grunt-newer": "~1.1.1",
+    "grunt-build-control": "~0.6.1"
   },
   "devDependencies": {
     "jsftp": "~1.5.2"

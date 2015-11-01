@@ -119,6 +119,21 @@ module.exports = function(grunt) {
                  dest: 'assets/img/'                  // Destination path prefix
                }]
              }
+           },
+
+           buildcontrol: {
+               options: {
+                   dir: '_site',
+                   commit: true,
+                   push: true,
+                   message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+               },
+               pages: {
+                   options: {
+                       remote: 'https://github.com/DevShelfBlog/DevShelf.git',
+                       branch: 'gh-pages'
+                   }
+               }
            }
     });
 
@@ -130,9 +145,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-ftp-push');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-newer');
+    grunt.loadNpmTasks('grunt-build-control');
 
-    grunt.registerTask('default', ['svgstore', 'newer:imagemin:dynamic', 'shell:jekyllBuild', 'uglify', 'postcss', 'express', 'watch']);
-    grunt.registerTask('deploy',  ['svgstore', 'newer:imagemin', 'shell:jekyllBuild', 'uglify', 'postcss', 'ftp_push']);
+    grunt.registerTask('default', ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'express', 'watch']);
+    grunt.registerTask('deploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'ftp_push']);
+    grunt.registerTask('ghdeploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol']);
     grunt.registerTask('images',  ['imagemin']);
 };
