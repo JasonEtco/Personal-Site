@@ -29,7 +29,9 @@
     "grunt-ftp-push": "~0.4.0",
     "grunt-contrib-imagemin": "~0.9.4",
     "grunt-newer": "~1.1.1",
-    "grunt-build-control": "~0.6.1"
+    "grunt-build-control": "~0.6.1",
+    "grunt-ftp-deploy": "~0.1.10",
+    "jsftp": "~1.5.3"
   },
   "devDependencies": {
     "jsftp": "~1.5.2"

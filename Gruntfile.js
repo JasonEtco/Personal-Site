@@ -106,6 +106,18 @@ module.exports = function(grunt) {
             }
           },
 
+          'ftp-deploy': {
+            build: {
+              auth: {
+                host: 'jasonetcovitch.com',
+                authKey: 'key1'
+              },
+              src: '_site/',
+              dest: '/public_html/',
+              exclusions: ['']
+            }
+          },
+
           imagemin: {                          // Task
              dynamic: {
                  options: {                       // Target options
@@ -143,12 +155,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-express');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-svgstore');
-    grunt.loadNpmTasks('grunt-ftp-push');
+    grunt.loadNpmTasks('grunt-ftp-deploy');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-build-control');
 
     grunt.registerTask('default', ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'express', 'watch']);
-    grunt.registerTask('deploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'ftp_push']);
+    grunt.registerTask('deploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'ftp-deploy']);
     grunt.registerTask('ghdeploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol']);
     grunt.registerTask('images',  ['imagemin']);
 };
