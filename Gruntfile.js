@@ -89,64 +89,52 @@ module.exports = function(grunt) {
         },
 
         ftp_push: {
-            your_target: {
-              options: {
-                authKey: "key1",
-                host: "jasonetcovitch.com",
-                dest: "/public_html/",
-                port: 21
-              },
-              files: [
-                {
-                  expand: true,
-                  cwd: '_site/',
-                  src: [ "**/*" ]
-                }
-              ]
-            }
+          jasonetcovitch: {
+            options: {
+              authKey: "key1",
+              host: "jasonetcovitch.com",
+              dest: "/public_html/",
+              port: 21
+            },
+            files: [
+              {
+                expand: true,
+                cwd: '_site/',
+                src: [ "**/*" ]
+              }
+            ]
+          }
+        },
+
+        imagemin: {                          // Task
+          dynamic: {
+            options: {                       // Target options
+                optimizationLevel: 3,
+                svgoPlugins: [{ removeViewBox: false }],
+              },                         // Another target
+            files: [{
+               expand: true,                  // Enable dynamic expansion
+               cwd: 'assets/img/',                   // Src matches are relative to this path
+               src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+               dest: 'assets/img/'                  // Destination path prefix
+            }]
+          }
+        },
+
+        buildcontrol: {
+          options: {
+            dir: '_site',
+            commit: true,
+            push: true,
+            message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
           },
-
-          'ftp-deploy': {
-            build: {
-              auth: {
-                host: 'jasonetcovitch.com',
-                authKey: 'key1'
-              },
-              src: '_site/',
-              dest: '/public_html/',
-              exclusions: ['']
+          pages: {
+            options: {
+                remote: 'https://github.com/JasonEtco/jasonetcovitch.com.git',
+                branch: 'gh-pages'
             }
-          },
-
-          imagemin: {                          // Task
-             dynamic: {
-                 options: {                       // Target options
-                      optimizationLevel: 3,
-                      svgoPlugins: [{ removeViewBox: false }],
-                    },                         // Another target
-               files: [{
-                 expand: true,                  // Enable dynamic expansion
-                 cwd: 'assets/img/',                   // Src matches are relative to this path
-                 src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
-                 dest: 'assets/img/'                  // Destination path prefix
-               }]
-             }
-           },
-
-           buildcontrol: {
-               options: {
-                   dir: '_site',
-                   commit: true,
-                   push: true,
-                   message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-               },
-               pages: {
-                   options: {
-                       remote: 'https://github.com/JasonEtco/jasonetcovitch.com.git',
-                       branch: 'gh-pages'
-                   }
-               }
-           }
+          }
+        }
     });
 
     grunt.loadNpmTasks('grunt-shell');
@@ -155,12 +143,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-express');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-svgstore');
-    grunt.loadNpmTasks('grunt-ftp-deploy');
+    grunt.loadNpmTasks('grunt-ftp-push');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-build-control');
 
-    grunt.registerTask('default', ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'express', 'watch']);
-    grunt.registerTask('deploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'ftp-deploy']);
+    grunt.registerTask('default',   ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'express', 'watch']);
+    grunt.registerTask('deploy',    ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'ftp_push']);
     grunt.registerTask('ghdeploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol']);
-    grunt.registerTask('images',  ['imagemin']);
+    grunt.registerTask('images',    ['imagemin']);
 };
