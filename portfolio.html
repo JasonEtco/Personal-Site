@@ -23,7 +23,7 @@ title: Portfolio
 				<div class="featured__slide">
 					<h2 class="featured__slide__title">{{ post.title }}</h2>
 					<a href="{{ post.url | prepend: site.baseurl }}" class="featured__slide__link">See More</a>
-					<div class="featured__slide__background" style="background-image: url({{ site.baseurl }}/assets/img/portfolio/{{ post.shortname }}/{{ post.shortname }}_large.jpg)"></div>
+					<div class="featured__slide__background" style="background-image: url(/assets/img/portfolio/{{ post.shortname }}/{{ post.shortname }}_large.jpg)"></div>
 			 	</div>
 
 				{% endfor %}
@@ -40,7 +40,7 @@ title: Portfolio
 
 				<h2 class="portfolio-list__item__title">{{ post.title }}</h2>
 				<h4 class="portfolio-list__item__category">{{ post.description }}</h4>
-				<div class="portfolio-list__item__background" style="background-image: url({{ site.baseurl }}/assets/img/portfolio/{{ post.shortname }}/{{ post.shortname }}.png)"></div>
+				<div class="portfolio-list__item__background" style="background-image: url(/assets/img/portfolio/{{ post.shortname }}/{{ post.shortname }}.png)"></div>
 
 			</a>
 
