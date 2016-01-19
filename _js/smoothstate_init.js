@@ -3,8 +3,9 @@
 t=a.getElementsByTagName(s)[0];e.async=1;e.src=o;t.parentNode.insertBefore(e,t)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-72564268-1', 'auto');
-ga('send', 'pageview');
+ga('create', 'UA-72564268-1', 'jasonetcovitch.com', {'allowLinker': true});
+ga('require', 'linker');
+ga('linker:autoLink', ['jasonet.co'] );
 
 
 $(document).ready(function() {
