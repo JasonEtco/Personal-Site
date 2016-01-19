@@ -92,7 +92,7 @@ module.exports = function(grunt) {
           jasonetcovitch: {
             options: {
               authKey: "key1",
-              host: "jasonetcovitch.com",
+              host: "ftp.jasonetcovitch.com",
               dest: "/public_html/",
               port: 21
             },
