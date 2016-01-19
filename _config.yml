@@ -1,7 +1,7 @@
 # Site settings
 title: Jason Etcovitch
 email: jasonetco@gmail.com
-description: "Jason Etcovitch, Toronto-based Graphic Designer and Web Developer.".
+description: "Jason Etcovitch, Toronto-based Graphic Designer and Web Developer."
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://jasonetcovitch.com" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
