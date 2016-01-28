@@ -8,7 +8,7 @@
 
 	    <div class="content-wrapper" id="main">
 		    <style>
-		    	.post__content-wrapper h2 { background-color: #{{ page.maincolor }}; }
+		    	.post__content-wrapper h2, .post__content-wrapper h3::after { background-color: #{{ page.maincolor }}; }
 		    	.post__content-wrapper hr { background-color: #{% if page.maincolortwo %}{{ page.maincolortwo }}{% else %}{{ page.maincolor }}{% endif %}; }
 		    </style>
 	      

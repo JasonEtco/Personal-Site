@@ -70,6 +70,7 @@ module.exports = function(grunt) {
                     '_posts/*.md',
                     '_config.yml',
                     '*.html',
+                    '**/*.html',
                     '*.md'
                 ],
                 tasks: ['shell:jekyllBuild', 'postcss', 'uglify']
