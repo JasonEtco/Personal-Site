@@ -118,15 +118,40 @@
 			position: relative;
 			display: block;
 			max-width: 700px;
-			margin: 0 auto;
+			margin: 0 auto 20px auto;
+
 			&::after {
 				content: '';
 				width: 100%;
 				height: 3px;
 				display: block;
 				position: absolute;
-				bottom: 0;
+				bottom: -10px;
 				left: 0;
+			}
+		}
+
+		article {
+			margin-top: 100px;
+
+			&:nth-child(1) {
+				margin-top: 0;
+			}
+
+			> p {
+				width: 100%;
+				max-width: 700px;
+				margin: 12px auto;
+				box-sizing: border-box;
+				text-align: center;
+				font-family: $body;
+				clear: both;
+
+				br {
+					content: '';
+					display: block;
+					margin: 10px 0;
+				}
 			}
 		}
 	}
