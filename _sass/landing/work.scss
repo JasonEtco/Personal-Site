@@ -99,7 +99,7 @@
 		right: 0;
 		z-index: 4;
 		text-decoration: none;
-		
+
 		font-family: $body-stack;
 		font-size: 12px;
 		letter-spacing: 1px;
@@ -114,5 +114,11 @@
 
 		background-color: red;
 		&:nth-child(2n) {background-color: blue;}
+
+		width: 25vw;
+
+		@include media-query ($on-tablet) {
+			width: 33.33vw;
+		}
 	}
 }
