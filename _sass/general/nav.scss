@@ -1,0 +1,52 @@
+.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+
+	display: flex;
+	align-items: center;
+	padding: 1em;
+}
+
+.nav {
+
+	&__icon {
+		fill: $orange;
+		height: 16px;
+	}
+
+	&__link {
+		text-decoration: none;
+		font-family: $body-stack;
+		font-size: 12px;
+		letter-spacing: 1px;
+
+		color: white;
+		text-transform: uppercase;
+
+		margin: 0 20px;
+
+		position: relative;
+
+		&::after {
+			content: '';
+			width: 100%;
+			background-color: $orange;
+			height: 1px;
+			position: absolute;
+			bottom: -4px;
+			left: 0;
+
+			opacity: 0;
+			transform: translateY(-4px);
+
+			transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out
+		}
+
+		&:hover::after {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}

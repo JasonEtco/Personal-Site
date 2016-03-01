@@ -1,3 +1,16 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# Jason Etcovitch // http://jasonet.co
 ---
+
+@import "general/normalize";
+@import "general/circular";
+
+@import "general/variables";
+@import "general/layout";
+@import "general/animations";
+
+@import "general/nav";
+
+@import "landing/home";
+@import "landing/work";
+@import "landing/owl";

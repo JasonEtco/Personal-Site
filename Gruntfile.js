@@ -45,7 +45,7 @@ module.exports = function(grunt) {
                     '_sass/**/*.scss',
                     'css/*.scss'
                 ],
-                tasks: ['shell:jekyllBuild', 'postcss']
+                tasks: ['shell:jekyllBuild', 'uglify', 'postcss']
             },
 
             js: {
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
                     '*.html',
                     '*.md'
                 ],
-                tasks: ['shell:jekyllBuild', 'postcss']
+                tasks: ['shell:jekyllBuild', 'uglify', 'postcss']
             },
 
             options: {

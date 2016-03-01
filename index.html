@@ -2,22 +2,31 @@
 layout: default
 ---
 
-<div class="home">
+<section class="section--home">
+    
+    {% include logo.svg %}
+    <span class="home__title scene-element scene-element--fade-in-down">Designer by day</span>
+    <span class="home__title scene-element scene-element--fade-in-down">Developer by night</span>
 
-  <h1 class="page-heading">Posts</h1>
+    <button class="home__button scene-element scene-element--fade-in-down">View Work</button>
 
-  <ul class="post-list">
+    <div class="home__overlay scene-element scene-element--fade-in-overlay"></div>
+
+</section>
+
+<section class="section--work">
+
     {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+        <a href="{{ post.url }}" class="work__link scene-element scene-element--fade-in-down" style="background-image: url(https://images.unsplash.com/photo-1453170804045-277782641dca?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=c1216e91afa4731bf969d7214675ab2d); animation-delay: {{ forloop.index | divided_by: 7.00 }}s; -webkit-animation-delay: {{ forloop.index | divided_by: 7.00 }}s">
+
+            <article class="work__caption">
+                <h2 class="work__title">{{ post.title }}</h2>
+                <span class="work__desc">{{ post.description }}</span>
+            </article>
+
+        </a>
+
     {% endfor %}
-  </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+</section>

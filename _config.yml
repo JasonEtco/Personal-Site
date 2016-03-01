@@ -12,7 +12,6 @@ markdown: kramdown
 
 exclude: [
 	.gitignore,
-	_js/,
 	Gruntfile.js,
 	Gemfile.lock,
 	node_modules/,
