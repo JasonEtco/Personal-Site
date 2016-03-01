@@ -112,13 +112,15 @@
 		height: 100%;
 		display: inline-block;
 
+		transition: transform 0.25s ease-in-out;
+
 		background-color: red;
 		&:nth-child(2n) {background-color: blue;}
 
-		width: 25vw;
+		width: 25%;
 
 		@include media-query ($on-tablet) {
-			width: 33.33vw;
+			width: 33.33%;
 		}
 	}
 }
