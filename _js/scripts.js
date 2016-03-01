@@ -6,48 +6,65 @@ var start = function() {
 		$(this).parent().addClass('home--hidden');
 	});
 
-	// $(".section--work").owlCarousel({
-	// 	items: 5,
-	// 	itemsDesktop: [1280,4],
-	// 	itemsDesktopSmall: [979,3],
-	// 	itemsTablet: [768,2],
-	// 	itemsMobile: [479,1],
 
-	// 	navigation: true,
-	// 	pagination: false
-	// });
-
-	var post       = $('.post');
-	var container  = $('.section--work');
-	var next       = $('.next');
-	var prev       = $('.prev');
-    var postCount = 3
+    // SLIDER
+    var container  = $('.section--work');
+	var post       = $('.work__post');
+    var postNum    = post.length;
+	var next       = $('.work__next');
+	var prev       = $('.work__prev');
+    var postCount  = 4
 
     post.css("width", "" + 100 / postCount + "%");
     post.css({transform: 'translate3d(0,0,0)'});
 
+    // Gets a pixel value of how much the elements should translate
     var step =  container.width() / postCount;
 
+
+    // On NEXT button click
     next.click(function() {
+        // Get integer for current value of transform property
+        // Takes [4] of the transform array which is the X value
         var current_pull = parseInt(post.css('transform').split(',')[4]);
+        var debug = (postNum * step) - (step * postCount)
 
-        console.log(container.width() - step);
-
-        if(current_pull == 0 - Math.round(container.width() - step)) {
-            // DO NOTHING
+        if(current_pull == (postNum * step - step * postCount) * -1) {
+            console.log("I'm stopping here thanks");
         } else {
+            console.log(debug);
+
+            // Variable for a new value
+            // which is the sum of where it
+            // is now plus the step variable
             var new_pull = current_pull - step;
-            post.css({transform: 'translate3d(' + Math.round(new_pull) + 'px, 0, 0'});
+
+            // Applies the new variable and rounds
+            post.css({transform: 'translate3d(' + new_pull + 'px, 0, 0'});
         }
     });
 
+
+    // On PREVIOUS button click
     prev.click(function() {    
+        // Get integer for current value of transform property
+        // Takes [4] of the transform array which is the X value
         var current_pull = parseInt(post.css('transform').split(',')[4]);
 
+        // Checks if the transform is currently at 0
+        // to tell if the slider has moved yet
         if(current_pull == 0) {
+
             // DO NOTHING
+
         } else {
+
+            // Variable for a new value
+            // which is the sum of where it
+            // is now plus the step variable
             var new_pull = current_pull + step;
+
+            // Applies the new variable and rounds
             post.css({transform: 'translate3d(' + Math.round(new_pull) + 'px, 0, 0'});
         }
     });

@@ -1,5 +1,9 @@
 .section--work {
 	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	font-size: 0;
+	white-space: nowrap;
 }
 
 .work {
@@ -84,42 +88,31 @@
 			transform: translateY(0);
 		}
 	}
-
-	&__nav-buttons {
-		position: fixed;
-		bottom: 60px;
-		right: 20px;
-		z-index: 5;
-	}
 }
 
-.owl-item, .owl-wrapper, .owl-wrapper-outer {
-	height: 100%;
-}
 
-.owl {
-	&-controls {
+// SLIDER STYLES
+.work {
+	&__buttons {
 		position: fixed;
-		top: 16px;
-		right: 16px;
-	}
-
-	&-buttons {
+		top: 0;
+		right: 0;
+		z-index: 4;
 		text-decoration: none;
+		
 		font-family: $body-stack;
 		font-size: 12px;
 		letter-spacing: 1px;
 		line-height: 1.4em;
 		text-transform: uppercase;
+	}
 
-		div {
-			color: white;
-			cursor: pointer;
-			transition: color 0.5s ease-in-out;
+	&__post {
+		font-size: 1rem;
+		height: 100%;
+		display: inline-block;
 
-			&:hover {
-				color: $grey;
-			}
-		}
+		background-color: red;
+		&:nth-child(2n) {background-color: blue;}
 	}
 }

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="section--home">
+<section class="section--home home--hidden">
     
     {% include logo.svg %}
     <span class="home__title scene-element scene-element--fade-in-down">Designer by day</span>
@@ -15,17 +15,23 @@ layout: default
 </section>
 
 <section class="section--work">
+    <aside class="work__buttons">
+        <button class="work__prev">PREV</button>
+        <button class="work__next">NEXT</button>
+    </aside>
 
     {% for post in site.posts %}
+        
+        <article class="work__post">
+            <a href="{{ post.url }}" class="work__link scene-element scene-element--fade-in-down">
 
-        <a href="{{ post.url }}" class="work__link scene-element scene-element--fade-in-down" style="background-image: url(https://images.unsplash.com/photo-1453170804045-277782641dca?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=c1216e91afa4731bf969d7214675ab2d); animation-delay: {{ forloop.index | divided_by: 7.00 }}s; -webkit-animation-delay: {{ forloop.index | divided_by: 7.00 }}s">
+                <div class="work__caption">
+                    <h2 class="work__title">{{ post.title }}</h2>
+                    <span class="work__desc">{{ post.description }}</span>
+                </div>
 
-            <article class="work__caption">
-                <h2 class="work__title">{{ post.title }}</h2>
-                <span class="work__desc">{{ post.description }}</span>
-            </article>
-
-        </a>
+            </a>
+        </article>
 
     {% endfor %}
 
