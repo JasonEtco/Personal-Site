@@ -27,13 +27,10 @@ var start = function() {
         // Uses RegEx to get the right value
         var current_pull = post[0].style.transform.match(/-?[\d\.]+/g)[1];
 
-
         // Checks to see if the slider is at the end
-        // 
-        if(current_pull == -100 * (postNum % postCount)) {
+        if(current_pull == -100 * (postNum - postCount)) {
             // AT END
         } else {
-
             // Variable for a new value
             // which is the sum of where it
             // is now plus the step variable
