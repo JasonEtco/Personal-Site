@@ -81,7 +81,6 @@
 	}
 
 	&__title {
-		font-family: $title-stack;
 		font-size: 45px;
 		line-height: 1;
 		color: white;
@@ -104,7 +103,6 @@
 	}
 
 	&__desc {
-		font-family: $body-stack;
 		font-size: 11px;
 		color: $grey;
 		text-transform: uppercase;
@@ -124,7 +122,6 @@
 		z-index: 2;
 		text-decoration: none;
 
-		font-family: $body-stack;
 		font-size: 12px;
 		letter-spacing: 1px;
 		line-height: 1.4em;

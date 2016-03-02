@@ -1,0 +1,73 @@
+.section--contact {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	color: white;
+}
+
+.contact {
+	&__title {
+		margin: 0;
+		font-size: 200px;
+		letter-spacing: -6px;
+		animation-delay: 1s;
+
+		@include media-query($on-tablet) {
+			font-size: 100px;
+			margin: 0.5em 0;
+			letter-spacing: -3px;
+		}
+
+		@include media-query($on-mobile) {
+			font-size: 72px;
+			margin: 0.5em 0;
+			letter-spacing: -1;
+		}
+	}
+
+	&__sub-title {
+		margin: 0;
+		font-size: 2em;
+		color: $grey;
+	}
+
+	&__desc {
+		max-width: 500px;
+		width: 95%;
+		text-align: center;
+		margin: 0;
+		animation-delay: 2.2s;
+	}
+
+	&__sub-desc {
+		max-width: 500px;
+		color: $grey;
+		width: 95%;
+		text-align: center;
+		margin: 1em 0;
+		animation-delay: 2.2s;
+	}
+
+	&__email-button {
+		border: 1px solid $orange;
+		padding: 1em;
+		background-color: transparent;
+		outline: none;
+
+		font-size: 11px;
+		color: white;
+		text-transform: uppercase;
+		text-decoration: none;
+
+		margin-top: 40px;
+
+		transition: background-color 0.25s ease-in-out;
+		animation-delay: 2.2s;
+
+		&:hover { background-color: $orange; }
+	}
+}

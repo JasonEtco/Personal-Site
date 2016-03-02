@@ -10,6 +10,8 @@ github_username:  jasonetco
 # Build settings
 markdown: kramdown
 
+permalink: /:title/
+
 exclude: [
 	.gitignore,
 	Gruntfile.js,

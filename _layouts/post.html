@@ -8,18 +8,22 @@ layout: default
 		<!-- <p class="post__meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p> -->
 
 		<p class="post__desc scene-element scene-element--fade-in-up">
-			{% if page.desc %}
-				{{ page.desc }}
+			{% if page.description %}
+				{{ page.description }}
 			{% else %}
-				Description is Pending
+				How’s business? Boomin. The key is to enjoy life, because they don’t want you to enjoy life.
 			{% endif %}
 		</p>
 
-		<div class="post__header-image scene-element scene-element--fade-in" id="post__header-image" style="background-image: url(/assets/large/{{ page.shortname }}_large.png)"></div>
+		<div class="post__header-image-wrapper scene-element scene-element--fade-in"><div class="post__header-image" id="post__header-image" style="background-image: url(/assets/large/{{ page.shortname }}_large.png)"></div></div>
 	</header>
 
 	<div class="post__content" itemprop="articleBody">
 		{{ content }}
 	</div>
+
+	<footer class="post__footer">
+		
+	</footer>
 
 </article>
