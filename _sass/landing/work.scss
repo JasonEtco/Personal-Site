@@ -13,7 +13,8 @@
 
 	&__post {
 		flex: none;
-		transition: transform 0.25s ease-in-out;
+		transition: transform 0.5s ease-in-out;
+
 
 		height: 100%;
 		width: 20%;
@@ -30,9 +31,6 @@
 			width: 100%;
 			height: 200px;
 		}
-
-		.work__link {background-color: grey;}
-		&:nth-child(2n) .work__link {background-color: darkgrey;}
 
 		// HOVER STATES
 		&:hover {
@@ -52,6 +50,8 @@
 		box-sizing: border-box;
 		overflow-x: hidden;
 		text-decoration: none;
+		@include background;
+
 
 		&::before {
 			content: '';
@@ -62,12 +62,12 @@
 			left: 0;
 
 			background-color: black;
-			opacity: 0.5;
+			opacity: 0.7;
 
 			transition: opacity 0.5s ease-in-out;
 		}
 
-		&:hover::before { opacity: 0.2 }
+		&:hover::before { opacity: 0.6 }
 	}
 
 	&__caption {
@@ -121,7 +121,7 @@
 		position: fixed;
 		top: 0;
 		right: 0;
-		z-index: 4;
+		z-index: 2;
 		text-decoration: none;
 
 		font-family: $body-stack;
@@ -129,6 +129,18 @@
 		letter-spacing: 1px;
 		line-height: 1.4em;
 		text-transform: uppercase;
+
+		button {
+			background: none;
+			border: none;
+			color: white;
+			outline: none;
+			padding: 1rem 1em;
+
+			&:hover {
+				background-color: rgba(0,0,0,0.5);
+			}
+		}
 
 		@include media-query ($on-mobile) {
 			display: none;

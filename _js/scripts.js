@@ -67,5 +67,12 @@ var start = function() {
             post.css({transform: 'translate3d(' + new_pull + '%, 0, 0)'});
         }
     });
+    // END SLIDER
+
+
+
+    imagesLoaded( '#post__header-image', { background: true }, function() {
+        $('#post__header-image').addClass('loaded');
+    });
 
 }

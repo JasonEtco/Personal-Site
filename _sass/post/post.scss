@@ -1,0 +1,50 @@
+.post {
+	height: 100%;
+	color: white;
+
+	&__header {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		position: relative;
+
+		&-image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: bottom center;
+
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+
+			&.loaded { opacity: 1; }
+
+			&::before {
+				content: '';
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				background-color: black;
+				opacity: 0.5;
+
+				transition: opacity 0.5s ease-in-out;
+			}
+		}
+	}
+
+	&__title {
+		font-family: $title-stack;
+		font-size: 2.4em;
+		margin: 0;
+	}
+}

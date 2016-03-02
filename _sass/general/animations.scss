@@ -8,6 +8,10 @@
             animation-name: fade-in-overlay;
         }
 
+        &--fade-in {
+            animation-name: fade-in;
+        }
+
         &--fade-in-up {
             animation-name: fade-in-up;
         }
@@ -32,6 +36,15 @@
     }
     100% {
         opacity: 0.6;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 

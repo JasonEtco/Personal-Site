@@ -3,12 +3,22 @@ layout: default
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-	<header class="post-header">
-		<h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-		<p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+	<header class="post__header">
+		<h1 class="post__title scene-element scene-element--fade-in-up" itemprop="name headline">{{ page.title }}</h1>
+		<!-- <p class="post__meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p> -->
+
+		<p class="post__desc scene-element scene-element--fade-in-up">
+			{% if page.desc %}
+				{{ page.desc }}
+			{% else %}
+				Description is Pending
+			{% endif %}
+		</p>
+
+		<div class="post__header-image scene-element scene-element--fade-in" id="post__header-image" style="background-image: url(/assets/large/{{ page.shortname }}_large.png)"></div>
 	</header>
 
-	<div class="post-content" itemprop="articleBody">
+	<div class="post__content" itemprop="articleBody">
 		{{ content }}
 	</div>
 

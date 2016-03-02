@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="section--home home--hidden">
+<section class="section--home">
     
     {% include logo.svg %}
     <span class="home__title scene-element scene-element--fade-in-down">Designer by day</span>
@@ -24,7 +24,7 @@ layout: default
     {% for post in site.posts %}
         
         <article class="work__post">
-            <a href="{{ post.url }}" class="work__link scene-element scene-element--fade-in-down" style="animation-delay: {{ forloop.index | divided_by: 7.00 }}s;">
+            <a href="{{ post.url }}" class="work__link scene-element scene-element--fade-in-down" style="background-image: url(/assets/tiles/{{ post.shortname }}_tile.jpg); animation-delay: {{ forloop.index | divided_by: 7.00 }}s;">
 
                 <div class="work__caption">
                     <h2 class="work__title">{{ post.title }}</h2>
