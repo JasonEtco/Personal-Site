@@ -18,6 +18,10 @@ var start = function() {
 
     post.css({transform: 'translate3d(0,0,0)'});
 
+    window.onresize = function() {
+        post.css({transform: 'translate3d(0,0,0)'});
+    }
+
     // On NEXT button click
     next.click(function() {
         // Recalculates postCount in case page has resized
