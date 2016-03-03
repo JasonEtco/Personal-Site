@@ -39,7 +39,6 @@ $(function(){
     
     onAfter: function($container) {
       start();
-      form_start();
     }
   },
   smoothState = $('#main').smoothState(options).data('smoothState');
