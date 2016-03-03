@@ -100,6 +100,10 @@
 		    left: 0;
 		    bottom: -20px;
 		}
+
+		@include media-query($on-mobile) {
+			font-size: 32px;
+		}
 	}
 
 	&__desc {
@@ -141,6 +145,22 @@
 
 		@include media-query ($on-mobile) {
 			display: none;
+		}
+	}
+}
+
+@include media-query($on-mobile) {
+	.work-page {
+		.work__title, .work__desc {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.home--hidden ~ .section--work {
+		.work__title, .work__desc {
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 }
