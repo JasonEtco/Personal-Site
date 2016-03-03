@@ -22,24 +22,6 @@ layout: default
 		{{ content }}
 	</div>
 
-	<footer class="post__footer">
-
-		{%if page.previous %}
-
-		<a href="{{ page.previous.url }}" class="post__next-link">
-			<h2 class="post__next-title">{{ page.previous.title }}</h2>
-		</a>
-
-		{% else %} <!-- If last post, show data for most recent post -->
-
-			{% for post in site.posts limit:1 %}
-				<a href="{{ post.url }}" class="post__next-link">
-					<h2 class="post__next-title">{{ post.title }}</h2>
-				</a>
-			{% endfor %}
-			
-		{% endif %}
-
-	</footer>
-
 </article>
+
+{% include footer.html %}

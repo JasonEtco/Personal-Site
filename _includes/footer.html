@@ -1,0 +1,44 @@
+<footer class="site-footer">
+		
+	{% if page.layout == 'post' %} <!-- Footer content for posts -->
+
+		<div class="footer--post__inner">
+
+			{%if page.previous %}
+
+				<a href="{{ page.previous.url }}" class="footer--post__next">
+					<span class="footer--post__next-more">More Work</span>
+					<h2 class="footer--post__next-title">{{ page.previous.title }}</h2>
+					<span class="footer--post__next-study">View Case Study</span>
+				</a>
+
+			{% else %} <!-- If last post, show data for most recent post -->
+
+				{% for post in site.posts limit:1 %}
+					<a href="{{ post.url }}" class="footer--post__next">
+						<span class="footer--post__next-more">More Work</span>
+						<h2 class="footer--post__next-title">{{ post.title }}</h2>
+						<span class="footer--post__next-study">View Case Study</span>
+					</a>
+				{% endfor %}
+				
+			{% endif %}
+
+		</div>
+
+	{% endif %}
+
+	<section class="footer__content-wrapper">
+		
+		<div class="footer__inner">
+			<p class="footer__desc">{{ site.description }}</p>
+
+			<div class="footer__info">
+				<h6>Contact Me</h6>
+				<a href="mailto:jasonetco@gmail.com">jasonetco@gmail.com</a>
+			</div>
+		</div>
+
+	</section>
+
+</footer>
