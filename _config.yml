@@ -1,7 +1,7 @@
 # Site settings
 title: Jason Etcovitch
 email: jasonetco@gmail.com
-description: "Toronto-based Graphic Design and Web Developer. Feel free to contact me if you have an interesting project, or just want to chat about design!"
+description: "Toronto-based Graphic Designer and Web Developer. Feel free to contact me if you have an interesting project, or just want to chat about design!"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://jasonet.co" # the base hostname & protocol for your site
 

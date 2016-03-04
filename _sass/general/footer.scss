@@ -8,13 +8,33 @@
 	&--post {
 
 		&__inner {
-			max-width: 1024px;
+			max-width: $post-width;
 			width: 100%;
 			margin: 0 auto;
+			padding: 30px 0 60px 0;
 			box-sizing: border-box;
+			position: relative;
 
-			@include media-query(1024px) {
-				padding: 0 12px;
+			&::before {
+				content: '';
+				background-color: $orange;
+				width: 100px;
+				height: 1px;
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				@include media-query($post-width) {
+					left: 12px;
+				}
+			}
+
+			@include media-query($post-width) {
+				padding: 30px 12px 60px 12px;
+			}
+
+			& + .footer__content-wrapper {
+				margin-top: 0;
 			}
 		}
 
@@ -26,7 +46,7 @@
 			flex-direction: column;
 
 			&:hover {
-				transform: translateX(20px);
+				transform: translate3d(20px, 0, 0);
 			}
 		}
 
@@ -59,7 +79,7 @@
 
 	&__inner {
 		width: 100%;
-		max-width: 1024px;
+		max-width: $post-width;
 		margin: 0 auto;
 
 		display: flex;
@@ -67,7 +87,7 @@
 		align-items: flex-start;
 
 
-		@include media-query(1024px) {
+		@include media-query($post-width) {
 			padding: 0 12px;
 		}
 

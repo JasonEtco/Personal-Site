@@ -92,7 +92,7 @@ var start = function() {
         var pageHeight = window.innerHeight;
         var scrollDown = document.querySelector('.post__scroll');
 
-        if(window.pageYOffset > pageHeight - 40) {
+        if(window.pageYOffset > pageHeight / 4) {
             scrollDown.classList.add('post__scroll--hidden');
         } else {
             scrollDown.classList.remove('post__scroll--hidden');
