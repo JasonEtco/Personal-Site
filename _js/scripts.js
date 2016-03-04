@@ -1,11 +1,14 @@
 var start = function() {
 
-	var homeButton = $('.home__button');
+	var homeButton = document.querySelector('.home__button');
 
-	homeButton.click(function() {
-		$(this).parent().addClass('home--hidden');
-	});
+    if(homeButton) {
+        homeButton.addEventListener("click", function() {
+            this.parentElement.classList.add('home--hidden');
+        });
+    }
 
+////////////////////////////////////////////////////////////////////////////////////////
 
     // SLIDER
     var container  = $('.section--work');
@@ -69,10 +72,27 @@ var start = function() {
     });
     // END SLIDER
 
+////////////////////////////////////////////////////////////////////////////////////////
+
+    var headerImage = document.querySelector('#post__header-image');
+
+    if(headerImage) {
+        imagesLoaded( headerImage, { background: true }, function() {
+            headerImage.classList.add('loaded');
+        });
+    }
 
 
-    imagesLoaded( '#post__header-image', { background: true }, function() {
-        $('#post__header-image').addClass('loaded');
-    });
+
+    window.onscroll = function() {
+        var pageHeight = window.innerHeight;
+        var scrollDown = document.querySelector('.post__scroll');
+
+        if(window.pageYOffset > pageHeight - 40) {
+            scrollDown.classList.add('post__scroll--hidden');
+        } else {
+            scrollDown.classList.remove('post__scroll--hidden');
+        }
+    };
 
 }

@@ -5,7 +5,6 @@ layout: default
 
 	<header class="post__header">
 		<h1 class="post__title scene-element scene-element--fade-in-up" itemprop="name headline">{{ page.title }}</h1>
-		<!-- <p class="post__meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p> -->
 
 		<p class="post__desc scene-element scene-element--fade-in-up">
 			{% if page.description %}
@@ -15,7 +14,9 @@ layout: default
 			{% endif %}
 		</p>
 
-		<div class="post__header-image-wrapper scene-element scene-element--fade-in"><div class="post__header-image" id="post__header-image" style="background-image: url(/assets/large/{{ page.shortname }}_large.png)"></div></div>
+		<span class="post__scroll">Scroll</span>
+
+		<div class="post__header-image-wrapper scene-element scene-element--fade-in"><div class="post__header-image" id="post__header-image" style="background-image: url(/assets/large/{{ page.shortname }}_large.jpg)"></div></div>
 	</header>
 
 	<div class="post__content" itemprop="articleBody">
