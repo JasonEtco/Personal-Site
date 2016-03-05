@@ -114,6 +114,21 @@ module.exports = function(grunt) {
             }
         },
 
+        prompt: {
+            target: {
+              options: {
+                questions: [
+                  {
+                    config: 'postName', // arbitrary name or config for any other grunt task
+                    type: 'input', // list, checkbox, confirm, input, password
+                    message: 'Name of Post', // Question to ask the user, function needs to return a string,
+                    default: 'Post Name' // default value if nothing is entered
+                  }
+                ]
+              }
+            },
+          },
+
     });
 
     grunt.loadNpmTasks('grunt-shell');
@@ -126,4 +141,37 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'express', 'watch']);
     grunt.registerTask('deploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol:pages']);
+
+    grunt.registerTask('test',
+    [
+        'prompt',
+        'mochacli'
+    ]);
+
+    grunt.task.registerTask('post', 'Create new jekyll posts from templates.', function() {
+      var name = grunt.option('name'),
+          category = grunt.option('cat'),
+          date = new Date(),
+          today = grunt.template.date(date, 'yyyy-mm-dd'),
+          template,
+          formatedName,
+          data,
+          content;
+
+      if (name) {
+        formatedName = name.replace(/[^a-z0-9]|\s+|\r?\n|\r/gmi, '-').toLowerCase();
+        category = category ? category : 'blog';
+        data = {
+          name: name,
+        };
+        template = grunt.file.read('_post-template-' + category + '.md');
+        content = grunt.template.process(template, {
+          data: data
+        });
+        grunt.file.write('_posts/' + today + '-' + formatedName + '.md', content);
+      }
+      else {
+        grunt.fail.warn('Name Required: `grunt post --name "My Post Name"`');
+      }
+    });
 };
