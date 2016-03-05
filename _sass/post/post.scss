@@ -88,14 +88,38 @@
 
 	&__content {
 		flex: 1;
-
 		text-align: center;
-
 		width: 100%;
-
 		font-size: 20px;
 
-		div { width: 100%; }
+		@include media-query($post-width) {
+			font-size: 16px;
+		}
+
+		div { 
+			width: 100%; 
+
+			&.flex {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				padding: 0 12px;
+				box-sizing: border-box;
+
+				img {
+					width: calc(50% - 24px);
+				}
+
+				@include media-query($post-width) {
+					display: block;
+					padding: 0;
+
+					img {
+						width: auto;
+					}
+				}
+			}
+		}
 
 		p {
 			max-width: 700px;
@@ -106,10 +130,18 @@
 
 			& + video {
 				margin: 120px auto 60px auto;
+
+				@include media-query($post-width) {
+					margin: 80px auto 40px auto;
+				}
 			}
 
-			& + img {
+			& + div > img {
 				margin: 120px auto 60px auto;
+
+				@include media-query($post-width) {
+					margin: 80px auto 40px auto;
+				}
 			}
 		}
 
@@ -119,16 +151,21 @@
 			background-color: $orange;
 			border: none;
 			margin: 60px auto;
+
+			@include media-query($post-width) {
+				margin: 40px auto;
+			}
 		}
 
 		video, img {
-			width: 100%;
 			max-width: $post-width;
 			height: auto;
 			margin: 60px auto;
+			display: block;
 
 			&.full-width {
 				max-width: none;
+				width: 100%;
 			}
 
 			&.shadow {
@@ -137,6 +174,11 @@
 
 			&.rounded {
 				border-radius: 5px;
+			}
+
+			@include media-query($post-width) {
+				max-width: 95%;
+				margin: 40px auto;
 			}
 		}
 	}
