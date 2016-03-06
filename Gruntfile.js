@@ -9,8 +9,8 @@ module.exports = function(grunt) {
                 command: 'jekyll build'
             },
 
-            jekyllServe: {
-                command: 'jekyll serve'
+            jekyllDrafts: {
+                command: 'jekyll build --drafts'
             }
         },
 
@@ -139,7 +139,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-build-control');
     grunt.loadNpmTasks('grunt-svgstore');
 
-    grunt.registerTask('default', ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'express', 'watch']);
+    grunt.registerTask('default', ['svgstore', 'shell:jekyllDrafts', 'uglify', 'postcss', 'express', 'watch']);
     grunt.registerTask('deploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol:pages']);
 
     grunt.registerTask('test',

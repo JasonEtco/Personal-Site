@@ -5,6 +5,8 @@ description: "Toronto-based Graphic Designer and Web Developer. Feel free to con
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://jasonet.co" # the base hostname & protocol for your site
 
+imagepath: "/assets/case-studies/{{ page.shortname }}/{{ page.shortname }}"
+
 github_username:  jasonetco
 
 # Build settings
