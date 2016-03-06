@@ -6,6 +6,7 @@
 	justify-content: center;
 	align-items: center;
 	box-sizing: border-box;
+	font-size: 20px;
 
 	color: white;
 
@@ -16,7 +17,7 @@
 
 .contact {
 	&__title {
-		margin: 0;
+		margin: 60px 0;
 		font-size: 200px;
 		letter-spacing: -6px;
 		animation-delay: 1s;
@@ -35,44 +36,71 @@
 	}
 
 	&__sub-title {
-		margin: 0;
+		margin: 0.5em 0;
 		font-size: 2em;
 		color: $grey;
 	}
 
 	&__desc {
-		max-width: 500px;
+		max-width: 700px;
+		color: $grey;
 		width: 95%;
 		text-align: center;
 		margin: 0;
 		animation-delay: 2.2s;
 	}
 
-	&__sub-desc {
-		max-width: 500px;
-		color: $grey;
-		width: 95%;
-		text-align: center;
-		margin: 1em 0;
+	&__links {
+		display: flex;
+		align-items: center;
+		position: relative;
+		padding: 2em;
 		animation-delay: 2.2s;
+
+		&::before {
+			content: '';
+		    width: 60px;
+		    height: 1px;
+		    background-color: #f87000;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+	        right: 0;
+	        margin-left: auto;
+	        margin-right: auto;
+		}
 	}
 
-	&__email-button {
-		border: 1px solid $orange;
-		padding: 1em;
-		background-color: transparent;
-		outline: none;
+	&__link {
+		text-decoration: none;
+		font-size: 12px;
+		letter-spacing: 1px;
 
-		font-size: 11px;
 		color: white;
 		text-transform: uppercase;
-		text-decoration: none;
 
-		margin-top: 40px;
+		margin: 0 20px;
 
-		transition: background-color 0.25s ease-in-out;
-		animation-delay: 2.2s;
+		position: relative;
 
-		&:hover { background-color: $orange; }
+		&::after {
+			content: '';
+			width: 100%;
+			background-color: $orange;
+			height: 1px;
+			position: absolute;
+			bottom: -4px;
+			left: 0;
+
+			opacity: 0;
+			transform: translateY(-4px);
+
+			transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out
+		}
+
+		&:hover::after {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 }

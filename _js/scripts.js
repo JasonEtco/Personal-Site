@@ -18,7 +18,7 @@ var start = function() {
 
     function nextSlide() {
         // Recalculates postCount in case page has resized
-        var postCount = Math.round(workContainer.offsetWidth / post[0].offsetWidth);
+        var postCount = Math.round(workContainer.getBoundingClientRect().width / post[0].getBoundingClientRect().width);
 
         // Get integer for current value of transform property
         // Uses RegEx to get the right value
@@ -59,14 +59,13 @@ var start = function() {
     }
 
     if(workContainer) {
-
         // Hide arrows if unnecessary
-        if(workContainer.offsetWidth == post[0].offsetWidth * post.length) {
+        if(workContainer.getBoundingClientRect().width == post[0].getBoundingClientRect().width * post.length) {
             next.style.display = 'none';
             prev.style.display = 'none';
         }
 
-        var postCount = workContainer.offsetWidth / post[0].offsetWidth;
+        var postCount = workContainer.getBoundingClientRect().width / post[0].getBoundingClientRect().width;
 
         [].forEach.call(post, function(e) {
             e.style.transform = 'translate3d(0,0,0)';
@@ -74,7 +73,7 @@ var start = function() {
 
         window.onresize = function() {
             // Hide arrows if unnecessary
-            if(workContainer.offsetWidth == post[0].offsetWidth * post.length) {
+            if(workContainer.getBoundingClientRect().width == post[0].getBoundingClientRect().width * post.length) {
                 next.style.display = 'none';
                 prev.style.display = 'none';
             } else {
@@ -108,15 +107,7 @@ var start = function() {
         imagesLoaded( headerImage, { background: true }, function() {
             headerImage.classList.add('loaded');
         });
-    }
 
-    if(workContainer) {
-        [].forEach.call(post, function(e) {
-            imagesLoaded( e, { background: true }, function() {
-                e.classList.add('loaded');
-            });
-        });
-        
         window.onscroll = function() {
             var pageHeight = window.innerHeight;
             var scrollDown = document.querySelector('.post__scroll');
@@ -127,5 +118,13 @@ var start = function() {
                 scrollDown.classList.remove('post__scroll--hidden');
             }
         };
+    }
+
+    if(workContainer) {
+        [].forEach.call(post, function(e) {
+            imagesLoaded( e, { background: true }, function() {
+                e.classList.add('loaded');
+            });
+        });
     }
 }
