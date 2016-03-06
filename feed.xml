@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jason Etcovitch</title>
+    <description>Toronto-based Graphic Designer and Web Developer. Feel free to contact me if you have an interesting project, or just want to chat about design!</description>
+    <link>http://jasonet.co/</link>
+    <atom:link href="http://jasonet.co/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 06 Mar 2016 14:32:39 -0500</pubDate>
+    <lastBuildDate>Sun, 06 Mar 2016 14:32:39 -0500</lastBuildDate>
+    <generator>Jekyll v3.0.3</generator>
+    
+      <item>
+        <title>Graphic Design 2015</title>
+        <description>
+&lt;h3 id=&quot;outline&quot;&gt;Outline&lt;/h3&gt;
+&lt;p&gt;Graphic design is a communicative art that uses different colors, typography, textures, images and shapes to carry over some kind of message; no work of design is purposeless.&lt;/p&gt;
+
+&lt;video class=&quot;shadow&quot; controls=&quot;&quot; preload=&quot;metadata&quot;&gt;
+	&lt;source src=&quot;/assets/case-studies/gd2015/gd2015_video.webm&quot; type=&quot;video/webm&quot; /&gt;
+	&lt;source src=&quot;/assets/case-studies/gd2015/gd2015_video.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+	&lt;source src=&quot;/assets/case-studies/gd2015/gd2015_video.ogv&quot; type=&quot;video/ogg&quot; /&gt;
+	&lt;p&gt;Your browser does not support the video tag.&lt;/p&gt;
+&lt;/video&gt;
+
+&lt;h3 id=&quot;the-plan&quot;&gt;The Plan&lt;/h3&gt;
+&lt;p&gt;My plan was to visually represent what graphic design is, rather than to blatantly say it. I explored many of the styles and considerations of the design process and this animation represents the field in an abstract way.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;components&quot;&gt;Components&lt;/h3&gt;
+&lt;p&gt;The blob and the logotype are the most impactful components of the animation; the typographic qualities of the logo speak to the importance of communication through design, and the blob surrounded by rotating colors reflect what design really is: form combined with an underlying message.&lt;/p&gt;
+
+&lt;video preload=&quot;metadata&quot; loop=&quot;&quot; autoplay=&quot;&quot; tabindex=&quot;0&quot; style=&quot;margin: 0 auto;&quot;&gt;
+	&lt;source src=&quot;/assets/case-studies/gd2015/gd2015_components.webm&quot; type=&quot;video/webm&quot; /&gt;
+	&lt;source src=&quot;/assets/case-studies/gd2015/gd2015_components.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+	&lt;p&gt;Your browser does not support the video tag.&lt;/p&gt;
+&lt;/video&gt;
+</description>
+        <pubDate>Sat, 05 Sep 2015 00:00:00 -0400</pubDate>
+        <link>http://jasonet.co/gd2015/</link>
+        <guid isPermaLink="true">http://jasonet.co/gd2015/</guid>
+        
+        <category>motion graphic</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Montreal United Nations Conference</title>
+        <description>
+&lt;h3 id=&quot;brief&quot;&gt;Brief&lt;/h3&gt;
+&lt;p&gt;The Montreal United Nations Conference is a new Model UN conference started in 2013 for High School, CEGEP and College students. I was asked to build the branding from the ground up, ensuring the conference’s visual identity communicated a feeling of professionalism which was this conference’s main characteristic.&lt;/p&gt;
+
+&lt;div&gt;
+	&lt;img src=&quot;/assets/case-studies/munc/munc_logo.png&quot; alt=&quot;Montreal United Nations Conference&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;the-conference&quot;&gt;The Conference&lt;/h3&gt;
+&lt;p&gt;Although they wanted to be seen as a strictly diplomatic conference, many students consider Model UN a chance to socialize and make friends; that created a challenge to find a branding scheme that was clean and represented professionalism, but still gave the feeling of excited interactions.&lt;/p&gt;
+
+&lt;div&gt;
+	&lt;img src=&quot;/assets/case-studies/munc/munc_mockup.jpg&quot; alt=&quot;Montreal United Nations Conference&quot; class=&quot;rounded shadow&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;typography&quot;&gt;Typography&lt;/h3&gt;
+&lt;p&gt;Among the characteristics of a Model UN conference is clarity of communication. That made typography, especially for nametags and placards, a vital aspect of the design. It was important to keep a professional look and to create a type-palette that was easily legible from a far distance, as dais members (sat at the front of a large auditorium) needed to be able to read names on a placard.&lt;/p&gt;
+
+&lt;div&gt;
+	&lt;img src=&quot;/assets/case-studies/munc/munc_type.png&quot; alt=&quot;Montreal United Nations Conference&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;collateral&quot;&gt;Collateral&lt;/h3&gt;
+&lt;p&gt;The conference required various brand assets; posters, name tags, a website, guidebooks, placards (papers that delegates hold up to show that they want to speak/vote). MUNC’s visual identity needed to be applied to all of these different formats and mediums.&lt;/p&gt;
+
+&lt;div class=&quot;shadow rounded&quot;&gt;
+	&lt;img src=&quot;/assets/case-studies/munc/munc_1.jpg&quot; alt=&quot;Montreal United Nations Conference&quot; /&gt;
+	&lt;img src=&quot;/assets/case-studies/munc/munc_2.jpg&quot; alt=&quot;Montreal United Nations Conference&quot; /&gt;
+	&lt;img src=&quot;/assets/case-studies/munc/munc_3.jpg&quot; alt=&quot;Montreal United Nations Conference&quot; /&gt;
+	&lt;img src=&quot;/assets/case-studies/munc/munc_4.jpg&quot; alt=&quot;Montreal United Nations Conference&quot; /&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 04 Sep 2015 00:00:00 -0400</pubDate>
+        <link>http://jasonet.co/munc/</link>
+        <guid isPermaLink="true">http://jasonet.co/munc/</guid>
+        
+        <category>Branding</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Mesa14 Visual Identity</title>
+        <description>
+&lt;h3 id=&quot;mandate&quot;&gt;Mandate&lt;/h3&gt;
+&lt;p&gt;Mesa14 is a top quality Mexican restaurant in downtown Montreal. My mandate was to create a branding system that displayed the quality of the food. Mesa, the Spanish word for table, was the main inspiration for this project; both the word table and the geographical region known as a Mesa. They share a straight linearity that I carried over into the identity for the restaurant.&lt;/p&gt;
+
+&lt;video preload=&quot;metadata&quot; loop=&quot;&quot; autoplay=&quot;&quot; tabindex=&quot;0&quot;&gt;
+	&lt;source src=&quot;/assets/case-studies/mesa14/mesa14_logo.webm&quot; type=&quot;video/webm&quot; /&gt;
+	&lt;source src=&quot;/assets/case-studies/mesa14/mesa14_logo.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+	&lt;p&gt;Your browser does not support the video tag.&lt;/p&gt;
+&lt;/video&gt;
+
+&lt;h3 id=&quot;visual-identity&quot;&gt;Visual Identity&lt;/h3&gt;
+&lt;p&gt;The most important characteristic of the brand is the feeling of straight, linear movement; I used strict horizontal alignments and square graphic elements to communicate that feeling.&lt;/p&gt;
+
+&lt;div&gt;
+	&lt;img src=&quot;/assets/case-studies/mesa14/mesa14_mockup.png&quot; alt=&quot;Mesa14 Visual Identity&quot; class=&quot;full-width&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;alphabet&quot;&gt;Alphabet&lt;/h3&gt;
+&lt;p&gt;As a part of the brand, I developed a grid-based alphabet to reinforce the horizontal linearity of the layouts and designs. These letters can be applied to titles for posters, advertisements and other large typographic uses.&lt;/p&gt;
+
+&lt;div&gt;
+	&lt;img src=&quot;/assets/case-studies/mesa14/mesa14_alphabet.png&quot; alt=&quot;Mesa14 Visual Identity&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;collateral&quot;&gt;Collateral&lt;/h3&gt;
+&lt;p&gt;To create a complete visual identity, I designed all of the documents and applications that Mesa14 would need. This included a website to make a reservation, a menu for the restaurant and posters to facilitate advertisements.&lt;/p&gt;
+
+&lt;div&gt;
+	&lt;img src=&quot;/assets/case-studies/mesa14/mesa14_mobile.png&quot; alt=&quot;Mesa14 Visual Identity&quot; class=&quot;full-width&quot; /&gt;
+	&lt;img src=&quot;/assets/case-studies/mesa14/mesa14_menu.jpg&quot; alt=&quot;Mesa14 Visual Identity&quot; class=&quot;shadow rounded&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;brand-guidelines&quot;&gt;Brand Guidelines&lt;/h3&gt;
+&lt;p&gt;As a part of the assignment, we were mandated to design a Brand Guideline book detailing the ways that the visual identity could and should be adapated to various applications.&lt;/p&gt;
+
+&lt;div&gt;
+	&lt;img src=&quot;/assets/case-studies/mesa14/mesa14_book-1.jpg&quot; alt=&quot;Mesa14 Visual Identity&quot; class=&quot;shadow&quot; /&gt;
+	&lt;img src=&quot;/assets/case-studies/mesa14/mesa14_book-2.jpg&quot; alt=&quot;Mesa14 Visual Identity&quot; class=&quot;shadow&quot; /&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 04 Sep 2015 00:00:00 -0400</pubDate>
+        <link>http://jasonet.co/mesa14/</link>
+        <guid isPermaLink="true">http://jasonet.co/mesa14/</guid>
+        
+        <category>Branding</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>E3 Website Design</title>
+        <description>
+&lt;h3 id=&quot;the-problem&quot;&gt;The Problem&lt;/h3&gt;
+&lt;p&gt;E3 is a computer and video game trade show held annually in Los Angeles, California. The name, E3, stands for “Electronic Entertainment Expo”. E3 hosts major companies like Apple, Microsoft, Sony and a number of high profile video game developers like EA Games and Nintendo. Their website and brand didn’t properly reflect the event, so I remade them.&lt;/p&gt;
+
+&lt;video preload=&quot;metadata&quot; loop=&quot;&quot; autoplay=&quot;&quot; tabindex=&quot;0&quot;&gt;
+	&lt;source src=&quot;/assets/case-studies/e3/e3_logo.webm&quot; type=&quot;video/webm&quot; /&gt;
+	&lt;source src=&quot;/assets/case-studies/e3/e3_logo.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+	&lt;p&gt;Your browser does not support the video tag.&lt;/p&gt;
+&lt;/video&gt;
+
+&lt;div&gt;
+	&lt;img src=&quot;/assets/case-studies/e3/e3_logo-dev.jpg&quot; alt=&quot;E3 Website Design&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;brand-attitude-branditude&quot;&gt;Brand Attitude (Branditude)&lt;/h3&gt;
+&lt;p&gt;The website needed to communicate the dynamic nature of the event, so busy photography was an important asset in showing the exciting event. This created a challenge of the photography overpowering some of the other important elements, which was solved by balancing out the page with appropriate use of negative space.&lt;/p&gt;
+
+&lt;div&gt;
+	&lt;img src=&quot;/assets/case-studies/e3/e3_home.jpg&quot; alt=&quot;E3 Website Design&quot; class=&quot;shadow rounded&quot; /&gt;
+	&lt;img src=&quot;/assets/case-studies/e3/e3_options.jpg&quot; alt=&quot;E3 Website Design&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;secondary-pages&quot;&gt;Secondary Pages&lt;/h3&gt;
+&lt;p&gt;The assignment was to design and code only 4 pages of the site. The challenge was of course to keep the same visual style throughout each page while highlighting its purpose.&lt;/p&gt;
+
+&lt;div class=&quot;flex&quot;&gt;
+	&lt;img src=&quot;/assets/case-studies/e3/e3_page-1.jpg&quot; alt=&quot;E3 Website Design&quot; class=&quot;shadow rounded&quot; /&gt;
+	&lt;img src=&quot;/assets/case-studies/e3/e3_page-2.jpg&quot; alt=&quot;E3 Website Design&quot; class=&quot;shadow rounded&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;responsive-development&quot;&gt;Responsive Development&lt;/h3&gt;
+&lt;p&gt;Despite the fact that the assignment did not require the site to be responsive, as a 21st Century website I felt it was necessary to expand the design to fit all devices and screen sizes.&lt;/p&gt;
+
+&lt;video crossorigin=&quot;anonymous&quot; preload=&quot;metadata&quot; loop=&quot;&quot; autoplay=&quot;&quot; tabindex=&quot;0&quot; class=&quot;full-width&quot;&gt;
+	&lt;source src=&quot;/assets/case-studies/e3/e3_app.webm&quot; type=&quot;video/webm&quot; /&gt;
+	&lt;source src=&quot;/assets/case-studies/e3/e3_app.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+	&lt;p&gt;Your browser does not support the video tag.&lt;/p&gt;
+&lt;/video&gt;
+</description>
+        <pubDate>Fri, 04 Sep 2015 00:00:00 -0400</pubDate>
+        <link>http://jasonet.co/e3/</link>
+        <guid isPermaLink="true">http://jasonet.co/e3/</guid>
+        
+        <category>web and front end</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
