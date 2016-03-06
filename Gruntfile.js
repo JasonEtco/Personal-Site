@@ -112,22 +112,7 @@ module.exports = function(grunt) {
                     branch: 'gh-pages'
                 }
             }
-        },
-
-        prompt: {
-            target: {
-              options: {
-                questions: [
-                  {
-                    config: 'postName', // arbitrary name or config for any other grunt task
-                    type: 'input', // list, checkbox, confirm, input, password
-                    message: 'Name of Post', // Question to ask the user, function needs to return a string,
-                    default: 'Post Name' // default value if nothing is entered
-                  }
-                ]
-              }
-            },
-          },
+        }
 
     });
 
@@ -141,12 +126,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['svgstore', 'shell:jekyllDrafts', 'uglify', 'postcss', 'express', 'watch']);
     grunt.registerTask('deploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol:pages']);
-
-    grunt.registerTask('test',
-    [
-        'prompt',
-        'mochacli'
-    ]);
 
     grunt.task.registerTask('post', 'Create new jekyll posts from templates.', function() {
       var name = grunt.option('name'),
