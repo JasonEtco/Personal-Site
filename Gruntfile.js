@@ -112,7 +112,18 @@ module.exports = function(grunt) {
                     branch: 'gh-pages'
                 }
             }
-        }
+        },
+
+        imagemin: {                          // Task
+            dynamic: {                         // Another target
+              files: [{
+                expand: true,                  // Enable dynamic expansion
+                cwd: 'assets/',                   // Src matches are relative to this path
+                src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+                dest: 'assets/'                  // Destination path prefix
+              }]
+            }
+          }
 
     });
 
@@ -123,8 +134,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-build-control');
     grunt.loadNpmTasks('grunt-svgstore');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-newer');
 
-    grunt.registerTask('default', ['svgstore', 'shell:jekyllDrafts', 'uglify', 'postcss', 'express', 'watch']);
+
+    grunt.registerTask('default', ['svgstore', 'newer:imagemin:dynamic', 'shell:jekyllDrafts', 'uglify', 'postcss', 'express', 'watch']);
     grunt.registerTask('deploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol:pages']);
 
     grunt.task.registerTask('post', 'Create new jekyll posts from templates.', function() {
