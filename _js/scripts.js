@@ -103,6 +103,14 @@ var start = function() {
         });
     }
 
+    if(workContainer) {
+        [].forEach.call(post, function(e) {
+            imagesLoaded( e, { background: true }, function() {
+                e.classList.add('loaded');
+            });
+        });
+    }
+
     window.onscroll = function() {
         var pageHeight = window.innerHeight;
         var scrollDown = document.querySelector('.post__scroll');
