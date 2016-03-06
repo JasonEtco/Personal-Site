@@ -10,3 +10,4 @@ shortname: postname
 
 # flex       - applicable on div wrapper
 ---
+{% capture imagePath %}/assets/case-studies/{{ page.shortname }}/{{ page.shortname }}{% endcapture %}
