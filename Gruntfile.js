@@ -108,7 +108,7 @@ module.exports = function(grunt) {
             },
             pages: {
                 options: {
-                    remote: 'https://github.com/JasonEtco/portfolio-jekyll.git',
+                    remote: 'https://github.com/JasonEtco/personal-site.git',
                     branch: 'gh-pages'
                 }
             }
@@ -139,7 +139,7 @@ module.exports = function(grunt) {
 
 
     grunt.registerTask('default', ['svgstore', 'newer:imagemin:dynamic', 'shell:jekyllDrafts', 'uglify', 'postcss', 'express', 'watch']);
-    grunt.registerTask('deploy',  ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol:pages']);
+    grunt.registerTask('deploy',  ['svgstore', 'newer:imagemin:dynamic', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol:pages']);
 
     grunt.task.registerTask('post', 'Create new jekyll posts from templates.', function() {
       var name = grunt.option('name'),
