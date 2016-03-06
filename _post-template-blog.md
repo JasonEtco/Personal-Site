@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Post Name
+tag: Tag
 description: Description
 shortname: postname
 
