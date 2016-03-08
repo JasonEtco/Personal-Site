@@ -14,6 +14,8 @@
 			padding: 30px 0 60px 0;
 			box-sizing: border-box;
 			position: relative;
+			display: flex;
+			justify-content: space-between;
 
 			&::before {
 				content: '';
@@ -38,14 +40,14 @@
 			}
 		}
 
-		&__next {
+		&__next, &__back {
 			color: white;
 			text-decoration: none;
 			transition: transform 0.5s ease-in-out;
 			display: inline-flex;
 			flex-direction: column;
 
-			&:hover .footer--post__next-title::after {
+			&:hover .footer--post__next-title::after, &:hover .footer--post__back-title::after {
 				opacity: 1;
 				transform: translateY(0);
 			}
@@ -55,7 +57,13 @@
 			}
 		}
 
-		&__next-title {
+		&__back {
+			@include media-query($on-mobile) {
+				display: none;
+			}
+		}
+		
+		&__next-title, &__back-title {
 			margin: 0;
 			font-size: 38px;
 			position: relative;
@@ -76,7 +84,7 @@
 			}
 		}
 
-		&__next-more {
+		&__next-more, &__back-to {
 			text-transform: uppercase;
 			font-size: 11px;
 			letter-spacing: 1px;
