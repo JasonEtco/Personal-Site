@@ -45,14 +45,35 @@
 			display: inline-flex;
 			flex-direction: column;
 
-			&:hover {
-				transform: translate3d(20px, 0, 0);
+			&:hover .footer--post__next-title::after {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			&:hover .footer--post__next-study {
+				transform: translateY(4px);
 			}
 		}
 
 		&__next-title {
 			margin: 0;
 			font-size: 38px;
+			position: relative;
+
+			&::after {
+				content: '';
+				width: 100%;
+				background-color: $orange;
+				height: 1px;
+				position: absolute;
+				bottom: -4px;
+				left: 0;
+
+				opacity: 0;
+				transform: translateY(-4px);
+
+				transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+			}
 		}
 
 		&__next-more {
@@ -66,6 +87,7 @@
 			font-size: 11px;
 			letter-spacing: 1px;
 			color: $orange;
+			transition: transform 0.25s ease-in-out;
 		}
 	}
 
