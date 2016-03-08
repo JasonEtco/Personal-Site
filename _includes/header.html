@@ -4,7 +4,13 @@
 
 	<nav class="nav">
 		<a class="nav__link" href="/">Home</a>
-		<a class="nav__link" href="/work">Work</a>
+
+		{% if page.title %}
+			<a class="nav__link" href="/work">Work</a>
+		{% else %}
+			<button class="nav__link nav__work-button">Work</button>
+		{% endif %}
+		
 		<a class="nav__link" href="/contact">Contact</a>
 	</nav>
 

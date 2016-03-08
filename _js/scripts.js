@@ -1,10 +1,15 @@
 var start = function() {
 
 	var homeButton = document.querySelector('.home__button');
+    var navWorkButton = document.querySelector('.nav__work-button');
 
     if(homeButton) {
         homeButton.addEventListener("click", function() {
             this.parentElement.classList.add('home--hidden');
+        });
+
+        navWorkButton.addEventListener("click", function() {
+            homeButton.parentElement.classList.add('home--hidden');
         });
     }
 
