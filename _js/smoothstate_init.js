@@ -1,11 +1,3 @@
-(function(j,a,s,o,n,e,t){j['GoogleAnalyticsObject']=n;j[n]=j[n]||function(){
-  (j[n].q=j[n].q||[]).push(arguments)},j[n].l=1*new Date();e=a.createElement(s),
-  t=a.getElementsByTagName(s)[0];e.async=1;e.src=o;t.parentNode.insertBefore(e,t)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-72564268-1', 'auto');
-  ga('send', 'pageview');
-
 $(document).ready(function() {
     start();
 });
