@@ -122,7 +122,7 @@ module.exports = function(grunt) {
                   options: {                       // Target options
                     optimizationLevel: 3,
                     svgoPlugins: [{ removeViewBox: false }],
-                    use: [mozjpeg({quality: 95})]
+                    use: [mozjpeg({quality: 85})]
                   },
                   files: [{
                     expand: true,                  // Enable dynamic expansion
@@ -156,8 +156,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-newer');
 
 
-    grunt.registerTask('default', ['svgstore', 'newer:imagemin', 'shell:jekyllDrafts', 'uglify', 'postcss', 'express', 'watch']);
-    grunt.registerTask('deploy',  ['svgstore', 'newer:imagemin', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol:pages']);
+    grunt.registerTask('default', ['svgstore', 'newer:imagemin:tiles', 'newer:imagemin:images', 'shell:jekyllDrafts', 'uglify', 'postcss', 'express', 'watch']);
+    grunt.registerTask('deploy',  ['svgstore', 'newer:imagemin:tiles', 'newer:imagemin:images', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol:pages']);
     grunt.registerTask('img',  ['imagemin:static']);
 
     grunt.task.registerTask('post', 'Create new jekyll posts from templates.', function() {
