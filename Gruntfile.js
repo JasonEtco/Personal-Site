@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 
     require('time-grunt')(grunt);
+    var mozjpeg = require('imagemin-mozjpeg');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -114,12 +115,29 @@ module.exports = function(grunt) {
             }
         },
 
-        imagemin: {                          // Task
-            dynamic: {                         // Another target
+
+
+        imagemin: {  
+            tiles: {                          // Target
+                  options: {                       // Target options
+                    optimizationLevel: 3,
+                    svgoPlugins: [{ removeViewBox: false }],
+                    use: [mozjpeg({quality: 95})]
+                  },
+                  files: [{
+                    expand: true,                  // Enable dynamic expansion
+                    cwd: 'assets/tiles',                   // Src matches are relative to this path
+                    src: ['*.{png,jpg,gif}'],   // Actual patterns to match
+                    dest: 'assets/tiles'                  // Destination path prefix
+                  }]
+                },
+
+                                // Task
+            images: {                         // Another target
               files: [{
                 expand: true,                  // Enable dynamic expansion
                 cwd: 'assets/',                   // Src matches are relative to this path
-                src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+                src: ['**/*.{png,jpg,gif}', '!tiles/*.*'],   // Actual patterns to match
                 dest: 'assets/'                  // Destination path prefix
               }]
             }
@@ -138,8 +156,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-newer');
 
 
-    grunt.registerTask('default', ['svgstore', 'newer:imagemin:dynamic', 'shell:jekyllDrafts', 'uglify', 'postcss', 'express', 'watch']);
-    grunt.registerTask('deploy',  ['svgstore', 'newer:imagemin:dynamic', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol:pages']);
+    grunt.registerTask('default', ['svgstore', 'newer:imagemin', 'shell:jekyllDrafts', 'uglify', 'postcss', 'express', 'watch']);
+    grunt.registerTask('deploy',  ['svgstore', 'newer:imagemin', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol:pages']);
+    grunt.registerTask('img',  ['imagemin:static']);
 
     grunt.task.registerTask('post', 'Create new jekyll posts from templates.', function() {
       var name = grunt.option('name'),
