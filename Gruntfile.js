@@ -126,21 +126,11 @@ module.exports = function(grunt) {
                   },
                   files: [{
                     expand: true,                  // Enable dynamic expansion
-                    cwd: 'assets/tiles',                   // Src matches are relative to this path
-                    src: ['*.{png,jpg,gif}'],   // Actual patterns to match
-                    dest: 'assets/tiles'                  // Destination path prefix
+                    cwd: 'assets/',                   // Src matches are relative to this path
+                    src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+                    dest: 'assets/'                  // Destination path prefix
                   }]
-                },
-
-                                // Task
-            images: {                         // Another target
-              files: [{
-                expand: true,                  // Enable dynamic expansion
-                cwd: 'assets/',                   // Src matches are relative to this path
-                src: ['**/*.{png,jpg,gif}', '!tiles/*.*'],   // Actual patterns to match
-                dest: 'assets/'                  // Destination path prefix
-              }]
-            }
+                }
           }
 
     });
@@ -156,9 +146,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-newer');
 
 
-    grunt.registerTask('default', ['svgstore', 'newer:imagemin:tiles', 'newer:imagemin:images', 'shell:jekyllDrafts', 'uglify', 'postcss', 'express', 'watch']);
-    grunt.registerTask('deploy',  ['svgstore', 'newer:imagemin:tiles', 'newer:imagemin:images', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol:pages']);
-    grunt.registerTask('img',  ['imagemin:static']);
+    grunt.registerTask('default', ['svgstore', 'newer:imagemin', 'shell:jekyllDrafts', 'uglify', 'postcss', 'express', 'watch']);
+    grunt.registerTask('deploy',  ['svgstore', 'newer:imagemin', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol:pages']);
+    grunt.registerTask('img',  ['imagemin']);
 
     grunt.task.registerTask('post', 'Create new jekyll posts from templates.', function() {
       var name = grunt.option('name'),
