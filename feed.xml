@@ -5,9 +5,80 @@
     <description>Jason Etcovitch, Toronto-based Graphic Designer and Web Developer. Feel free to contact me if you have an interesting project, or just want to chat about design!</description>
     <link>http://jasonet.co/</link>
     <atom:link href="http://jasonet.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 18 Mar 2016 14:22:25 -0400</pubDate>
-    <lastBuildDate>Fri, 18 Mar 2016 14:22:25 -0400</lastBuildDate>
-    <generator>Jekyll v3.0.3</generator>
+    <pubDate>Tue, 12 Apr 2016 17:19:59 -0400</pubDate>
+    <lastBuildDate>Tue, 12 Apr 2016 17:19:59 -0400</lastBuildDate>
+    <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>OnDesign.xyz</title>
+        <description>
+&lt;h3 id=&quot;a-writers-shortcoming&quot;&gt;A Writer’s Shortcoming&lt;/h3&gt;
+
+&lt;p&gt;There are so many great designers who put their teachings and thoughts into well written articles, attempting to teach and inspire their peers or global mentees. Unfortunately, these designers are busy making great work for their clients and can’t put in the time to add visual detail to their writings. Fortunately, I can (and did).&lt;/p&gt;
+
+&lt;div class=&quot;flex rounded shadow&quot;&gt;
+	&lt;img src=&quot;/assets/case-studies/ondesign/ondesign_index.png&quot; alt=&quot;OnDesign.xyz&quot; /&gt;
+	&lt;img src=&quot;/assets/case-studies/ondesign/ondesign_iA.png&quot; alt=&quot;OnDesign.xyz&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;typography&quot;&gt;Typography&lt;/h3&gt;
+
+&lt;p&gt;There is not a single image in the whole website; keeping it sans-photo focuses on the content, which is of course the most important part of the site. This means that the typographic choices needed to be very well-considered.&lt;/p&gt;
+
+&lt;div&gt;
+	&lt;img src=&quot;/assets/case-studies/ondesign/ondesign_type.png&quot; alt=&quot;OnDesign.xyz&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;the-devils-in-the-details&quot;&gt;The Devil’s in the Details&lt;/h3&gt;
+
+&lt;p&gt;Especially in Bruce Mau’s &lt;a href=&quot;http://ondesign.xyz/articles/incomplete-manifesto-for-growth/#12&quot;&gt;Incomplete Manifesto for Growth&lt;/a&gt;, there are many places to include small visual details that add to the content. Small animations, tiny interactions; things that lend a visually understandable aspect to Bruce Mau’s words.&lt;/p&gt;
+
+&lt;div&gt;
+	&lt;video preload=&quot;metadata&quot; loop=&quot;&quot; autoplay=&quot;&quot; tabindex=&quot;0&quot;&gt;
+		&lt;source src=&quot;/assets/case-studies/ondesign/ondesign_manifesto.webm&quot; type=&quot;video/webm&quot; /&gt;
+		&lt;source src=&quot;/assets/case-studies/ondesign/ondesign_manifesto.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+		&lt;p&gt;Your browser does not support the video tag.&lt;/p&gt;
+	&lt;/video&gt;
+
+	&lt;video preload=&quot;metadata&quot; loop=&quot;&quot; autoplay=&quot;&quot; tabindex=&quot;0&quot;&gt;
+		&lt;source src=&quot;/assets/case-studies/ondesign/ondesign_manifesto-2.webm&quot; type=&quot;video/webm&quot; /&gt;
+		&lt;source src=&quot;/assets/case-studies/ondesign/ondesign_manifesto-2.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+		&lt;p&gt;Your browser does not support the video tag.&lt;/p&gt;
+	&lt;/video&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;custom-code&quot;&gt;Custom code&lt;/h3&gt;
+
+&lt;p&gt;Because each article is so different, it’s impossible to have such well-considered interactions that span across every article. I wrote separate JavaScript functions and CSS styles for some of the content to give it that “one-of-a-kind” feel.&lt;br /&gt;
+&lt;a href=&quot;https://github.com/JasonEtco/type-texts&quot;&gt;See the code right here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;flex rounded shadow&quot;&gt;
+	&lt;img src=&quot;/assets/case-studies/ondesign/ondesign_code.jpg&quot; alt=&quot;OnDesign.xyz&quot; /&gt;
+	&lt;img src=&quot;/assets/case-studies/ondesign/ondesign_timer.jpg&quot; alt=&quot;OnDesign.xyz&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;scalability&quot;&gt;Scalability&lt;/h3&gt;
+
+&lt;p&gt;Just because each article requires custom code, that doesn’t mean the commonalities should be ignored. &lt;abbr title=&quot;Don&#39;t Repeat Yourself&quot;&gt;DRY&lt;/abbr&gt; thinking was still applicable to many of the typographic and layout-based decisions.&lt;/p&gt;
+
+&lt;video crossorigin=&quot;anonymous&quot; preload=&quot;metadata&quot; loop=&quot;&quot; autoplay=&quot;&quot; tabindex=&quot;0&quot; class=&quot;full-width&quot;&gt;
+	&lt;source src=&quot;/assets/case-studies/ondesign/ondesign_app.webm&quot; type=&quot;video/webm&quot; /&gt;
+	&lt;source src=&quot;/assets/case-studies/ondesign/ondesign_app.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+	&lt;p&gt;Your browser does not support the video tag.&lt;/p&gt;
+&lt;/video&gt;
+
+&lt;h3 id=&quot;to-really-appreciate-it&quot;&gt;To really appreciate it:&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://ondesign.xyz&quot;&gt;View the live site here&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 12 Apr 2016 00:00:00 -0400</pubDate>
+        <link>http://jasonet.co/ondesign-xyz/</link>
+        <guid isPermaLink="true">http://jasonet.co/ondesign-xyz/</guid>
+        
+        <category>Web and Front-End</category>
+        
+        
+      </item>
     
       <item>
         <title>Graphic Design 2015</title>
