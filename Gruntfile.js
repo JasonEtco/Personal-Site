@@ -5,13 +5,19 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        shell: {
-            jekyllBuild: {
-                command: 'jekyll build'
+        jekyll: {
+            working: {
+              options: {
+                config: '_config.yml',
+                drafts: true
+              }
             },
 
-            jekyllDrafts: {
-                command: 'jekyll build --drafts'
+            deploy: {
+              options: {
+                config: '_config.yml',
+                drafts: false
+              }
             }
         },
 
@@ -46,21 +52,21 @@ module.exports = function(grunt) {
                     '_sass/**/*.scss',
                     'css/*.scss'
                 ],
-                tasks: ['shell:jekyllBuild', 'uglify', 'postcss']
+                tasks: ['jekyll:working', 'uglify', 'postcss']
             },
 
             js: {
                 files: [
                     '_js/*.js'
                 ],
-                tasks: ['shell:jekyllBuild', 'uglify', 'postcss']
+                tasks: ['jekyll:working', 'uglify', 'postcss']
             },
 
             svg: {
                 files: [
                     '_svgs/*.svg'
                 ],
-                tasks: ['svgstore', 'shell:jekyllBuild', 'uglify', 'postcss']
+                tasks: ['svgstore', 'jekyll:working', 'uglify', 'postcss']
             },
 
             jekyll: {
@@ -70,9 +76,10 @@ module.exports = function(grunt) {
                     '_posts/*.md',
                     '_config.yml',
                     '*.html',
-                    '*.md'
+                    '*.md',
+                    '!_site/**/*.html'
                 ],
-                tasks: ['shell:jekyllBuild', 'uglify', 'postcss']
+                tasks: ['jekyll:working', 'uglify', 'postcss']
             },
 
             options: {
@@ -135,7 +142,7 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-jekyll');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-express');
@@ -146,8 +153,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-newer');
 
 
-    grunt.registerTask('default', ['svgstore', 'newer:imagemin', 'shell:jekyllDrafts', 'uglify', 'postcss', 'express', 'watch']);
-    grunt.registerTask('deploy',  ['svgstore', 'newer:imagemin', 'shell:jekyllBuild', 'uglify', 'postcss', 'buildcontrol:pages']);
+    grunt.registerTask('default', ['svgstore', 'newer:imagemin', 'jekyll:working', 'uglify', 'postcss', 'express', 'watch']);
+    grunt.registerTask('deploy',  ['svgstore', 'newer:imagemin', 'jekyll:deploy', 'uglify', 'postcss', 'buildcontrol:pages']);
     grunt.registerTask('img',  ['imagemin']);
 
     grunt.task.registerTask('post', 'Create new jekyll posts from templates.', function() {
