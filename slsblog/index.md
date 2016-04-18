@@ -57,13 +57,13 @@ Visualizing a change in material width as significant as this is difficult, so I
 
 <div class="rounded shadow">
 	<img src="{{ imagePath }}sls-4-0.jpg" alt="Transformation">
-	<img src="{{ imagePath }}sls-4-1.jpg" alt="Transformation">
-	<img src="{{ imagePath }}sls-4-2.jpg" alt="Transformation">
-	<img src="{{ imagePath }}sls-4-3.jpg" alt="Transformation">
+	<img src="{{ imagePath }}sls-4-1.JPG" alt="Transformation">
+	<img src="{{ imagePath }}sls-4-2.JPG" alt="Transformation">
+	<img src="{{ imagePath }}sls-4-3.JPG" alt="Transformation">
 </div>
 <div class="flex rounded shadow">
-	<img src="{{ imagePath }}sls-4-4.jpg" alt="Transformation">
-	<img src="{{ imagePath }}sls-4-5.jpg" alt="Transformation">
+	<img src="{{ imagePath }}sls-4-4.JPG" alt="Transformation">
+	<img src="{{ imagePath }}sls-4-5.JPG" alt="Transformation">
 </div>
 
 ### 5. Rethinking the White Cube
