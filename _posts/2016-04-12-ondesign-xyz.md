@@ -52,7 +52,7 @@ Especially in Bruce Mau's [Incomplete Manifesto for Growth](http://ondesign.xyz/
 ### Custom code
 
 Because each article is so different, it's impossible to have such well-considered interactions that span across every article. I wrote separate JavaScript functions and CSS styles for some of the content to give it that "one-of-a-kind" feel.  
-[See the code right here.](https://github.com/JasonEtco/type-texts)
+[See the code right here.](https://github.com/JasonEtco/ondesign-xyz)
 
 <div class="flex rounded shadow">
 	<img src="{{ imagePath }}_code.jpg" alt="{{ page.title }}">
