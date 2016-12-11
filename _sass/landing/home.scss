@@ -15,7 +15,7 @@
 	opacity: 1;
 	visibility: visible;
 
-	transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+	transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
 	transition-delay: 0s;
 
 	&.home--hidden {
@@ -53,8 +53,8 @@
 
 		margin-top: 60px;
 
-		transition: background-color 0.25s ease-in-out;
-		animation-delay: 0.4s;
+		transition: background-color 200ms ease-in-out;
+		animation-delay: 300ms;
 
 		&:hover { background-color: $orange; }
 	}
