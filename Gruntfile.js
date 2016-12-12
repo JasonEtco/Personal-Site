@@ -122,8 +122,6 @@ module.exports = function(grunt) {
             }
         },
 
-
-
         imagemin: {  
             tiles: {                          // Target
                   options: {                       // Target options
@@ -138,49 +136,58 @@ module.exports = function(grunt) {
                     dest: 'assets/'                  // Destination path prefix
                   }]
                 }
-          }
+          },
 
+          jekyll_post: {
+            option: {
+                dist: '_posts',
+                format: 'markdown',
+                comment: [
+                    'shadow 	 - creates a box-shadow',
+                    'rounded 	 - border-radius: 5px',
+                    'full-width - removes max-width to be 100%',
+                    'flex       - applicable on div wrapper'
+                ]
+            },
+            questions: [
+                {
+                    config: 'title',
+                    message: 'Title?',
+                    default: 'Your Default Title'
+                },
+                {
+                    config: 'tag',
+                    message: 'Tag?',
+                    default: 'web and front end'
+                },
+                {
+                    config: 'shortname',
+                    message: 'Shortened name, used in links',
+                    default: 'short'
+                },
+                {
+                    config: 'description',
+                    message: 'Description',
+                    default: 'bla bla bla'
+                },
+            ]
+        },
     });
 
-    grunt.loadNpmTasks('grunt-jekyll');
-    grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-build-control');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-express');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-build-control');
-    grunt.loadNpmTasks('grunt-svgstore');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-jekyll-post');
+    grunt.loadNpmTasks('grunt-jekyll');
     grunt.loadNpmTasks('grunt-newer');
+    grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-svgstore');
 
 
     grunt.registerTask('default', ['svgstore', 'newer:imagemin', 'jekyll:working', 'uglify', 'postcss', 'express', 'watch']);
     grunt.registerTask('deploy',  ['svgstore', 'newer:imagemin', 'jekyll:deploy', 'uglify', 'postcss', 'buildcontrol:pages']);
     grunt.registerTask('img',  ['imagemin']);
-
-    grunt.task.registerTask('post', 'Create new jekyll posts from templates.', function() {
-      var name = grunt.option('name'),
-          category = grunt.option('cat'),
-          date = new Date(),
-          today = grunt.template.date(date, 'yyyy-mm-dd'),
-          template,
-          formatedName,
-          data,
-          content;
-
-      if (name) {
-        formatedName = name.replace(/[^a-z0-9]|\s+|\r?\n|\r/gmi, '-').toLowerCase();
-        category = category ? category : 'blog';
-        data = {
-          name: name,
-        };
-        template = grunt.file.read('_post-template-' + category + '.md');
-        content = grunt.template.process(template, {
-          data: data
-        });
-        grunt.file.write('_posts/' + today + '-' + formatedName + '.md', content);
-      }
-      else {
-        grunt.fail.warn('Name Required: `grunt post --name "My Post Name"`');
-      }
-    });
+    grunt.registerTask('post', ['jekyll_post']);
 };

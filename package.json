@@ -22,10 +22,11 @@
     "grunt-contrib-uglify": "^0.9.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-express": "^1.4.1",
+    "grunt-jekyll": "latest",
+    "grunt-jekyll-post": "^0.2.0",
     "grunt-newer": "^1.1.2",
     "grunt-parallel": "^0.4.1",
     "grunt-postcss": "^0.5.4",
-    "grunt-jekyll": "latest",
     "grunt-svgstore": "^0.5.0",
     "time-grunt": "^1.1.0"
   },
