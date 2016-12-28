@@ -25,7 +25,7 @@
 			@include background;
 
 			opacity: 0;
-			transition: opacity 0.5s ease-in-out;
+			transition: opacity 300ms ease-in-out;
 
 			&.loaded { opacity: 1; }
 
@@ -81,8 +81,8 @@
 
 		margin-top: 20px;
 
-		transition: background-color 0.25s ease-in-out;
-		animation-delay: 0.4s;
+		transition: background-color 200ms ease-in-out;
+		animation-delay: 300ms;
 
 		&:hover { background-color: $orange; }
 	}
@@ -184,7 +184,7 @@
 					position: absolute;
 					left: 0;
 					bottom: 0;
-					transition: transform 0.25s ease-in-out;
+					transition: transform 200ms ease-in-out;
 				}
 
 				&:hover::after {
