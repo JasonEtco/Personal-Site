@@ -43,6 +43,7 @@
 				opacity: 1;
 				transform: translateY(0);
 			}
+			.work__desc { transition-delay: 150ms; }
 		}
 	}
 
@@ -121,7 +122,6 @@
 		opacity: 0;
 		transform: translateY(10px);
 		transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
-		transition-delay: 0.2s;
 	}
 
 	&__buttons {
