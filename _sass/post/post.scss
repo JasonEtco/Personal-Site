@@ -129,7 +129,7 @@
 				padding: 0 12px;
 				box-sizing: border-box;
 
-				img {
+				img, video {
 					width: calc(50% - 24px);
 				}
 
@@ -137,7 +137,7 @@
 					display: block;
 					padding: 0;
 
-					img {
+					img, video {
 						width: auto;
 					}
 				}
