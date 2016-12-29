@@ -119,6 +119,10 @@
 			font-size: 16px;
 		}
 
+		@include media-query($post-width) {
+			.hide-on-mobile { display: none; }
+		}
+
 		div { 
 			width: 100%;
 
