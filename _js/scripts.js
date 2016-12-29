@@ -1,5 +1,6 @@
 var start = function() {
 
+    var nav = document.querySelector('.site-header');
 	var homeButton = document.querySelector('.home__button');
     var navWorkButton = document.querySelector('.nav__work-button');
 
@@ -119,8 +120,10 @@ var start = function() {
 
             if(window.pageYOffset > pageHeight / 4) {
                 scrollDown.classList.add('post__scroll--hidden');
+                nav.classList.add('site-header--has-bg');
             } else {
                 scrollDown.classList.remove('post__scroll--hidden');
+                nav.classList.remove('site-header--has-bg');
             }
         };
     }
