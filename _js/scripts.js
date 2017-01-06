@@ -41,6 +41,11 @@ var start = function() {
             [].forEach.call(post, function(e) {
                 e.style.transform = 'translate3d(' + new_pull + '%,0,0)';
             });
+        } else {
+            // If at the end, go back to the beginning
+            [].forEach.call(post, function(e) {
+                e.style.transform = 'translate3d(0,0,0)';
+            });
         }
     }
 
