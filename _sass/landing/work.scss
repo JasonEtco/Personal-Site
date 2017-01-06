@@ -128,7 +128,7 @@
 		position: fixed;
 		top: 0;
 		right: 0;
-		z-index: 9999;
+		z-index: 2;
 		text-decoration: none;
 
 		font-size: 12px;
@@ -142,6 +142,7 @@
 			color: white;
 			outline: none;
 			padding: 1rem 1em;
+			transition: background-color 150ms ease-in-out;
 
 			&:hover {
 				background-color: rgba(0,0,0,0.5);

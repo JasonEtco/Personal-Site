@@ -7,6 +7,7 @@
 	align-items: center;
 	width: 100%;
 	padding: 1em;
+	pointer-events: none;
 
 	&::after {
 		content: '';
@@ -16,7 +17,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: linear-gradient(top, rgba($darkgrey, 1) 0%,rgba($darkgrey, 0) 100%);
+		background: linear-gradient(to bottom, rgba($darkgrey, 1) 0%,rgba($darkgrey, 0) 100%);
 		opacity: 0;
 		transition: opacity 150ms ease-in-out;
 	}
@@ -27,6 +28,7 @@
 }
 
 .nav {
+	pointer-events: initial;
 
 	&__icon {
 		fill: $orange;
