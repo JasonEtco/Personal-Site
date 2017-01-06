@@ -39,12 +39,17 @@ var start = function() {
 
             // Applies the new variable and rounds
             [].forEach.call(post, function(e) {
-                e.style.transform = 'translate3d(' + new_pull + '%,0,0)';
+                window.requestAnimationFrame(function(t) {
+                    console.info('Got animation frame!', t);
+                    e.style.transform = 'translate3d(' + new_pull + '%,0,0)';
+                });
             });
         } else {
             // If at the end, go back to the beginning
             [].forEach.call(post, function(e) {
-                e.style.transform = 'translate3d(0,0,0)';
+                window.requestAnimationFrame(function() {
+                    e.style.transform = 'translate3d(0,0,0)';
+                });
             });
         }
     }
@@ -64,7 +69,9 @@ var start = function() {
 
             // Applies the new variable and rounds
             [].forEach.call(post, function(e) {
-                e.style.transform = 'translate3d(' + new_pull + '%,0,0)';
+                window.requestAnimationFrame(function() {
+                    e.style.transform = 'translate3d(' + new_pull + '%,0,0)';
+                });
             });
         }
     }
@@ -79,7 +86,9 @@ var start = function() {
         var postCount = workContainer.getBoundingClientRect().width / post[0].getBoundingClientRect().width;
 
         [].forEach.call(post, function(e) {
-            e.style.transform = 'translate3d(0,0,0)';
+            window.requestAnimationFrame(function() {
+                e.style.transform = 'translate3d(0,0,0)';
+            });
         });
 
         window.onresize = function() {
@@ -93,7 +102,9 @@ var start = function() {
             }
 
             [].forEach.call(post, function(e) {
-               e.style.transform = 'translate3d(0,0,0)';
+               window.requestAnimationFrame(function() {
+                e.style.transform = 'translate3d(0,0,0)';
+               });
             });
         }
 
